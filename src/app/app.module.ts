@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { NbSidebarModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     AppRoutingModule,
     BrowserAnimationsModule,
     NbThemeModule.forRoot({ name: 'dark' }),
+    NbSidebarModule.forRoot(),
     NbLayoutModule,
     NbEvaIconsModule,
   ],
