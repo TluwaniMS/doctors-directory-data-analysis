@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { EndPointServices } from 'src/app/service-organiser/end-point-services';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,7 +30,7 @@ import { SpecialtyAnalysisComponent } from './components/specialty-analysis/spec
     NbLayoutModule,
     NbEvaIconsModule,
   ],
-  providers: [],
+  providers: [...EndPointServices],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
