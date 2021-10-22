@@ -1,3 +1,6 @@
 {
-  "doctorDirectoryStats": {}
+  "mainDirectoryStatistics": "/api/main-directory-statistics",
+  "municipalityStatistics":"/api/municipality-statistics",
+  "specialtyStatistics":"/api/specialty-statistics",
+  "hospitalStatistics":""
 }
