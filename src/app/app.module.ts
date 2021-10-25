@@ -12,6 +12,7 @@ import { NbSidebarModule } from '@nebular/theme';
 import { MunicipalityAnalysisComponent } from './components/municipality-analysis/municipality-analysis.component';
 import { HospitalAnalysisComponent } from './components/hospital-analysis/hospital-analysis.component';
 import { SpecialtyAnalysisComponent } from './components/specialty-analysis/specialty-analysis.component';
+import { MainDirectoryStatsAnalysisComponent } from './components/main-directory-stats-analysis/main-directory-stats-analysis.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SpecialtyAnalysisComponent } from './components/specialty-analysis/spec
     MunicipalityAnalysisComponent,
     HospitalAnalysisComponent,
     SpecialtyAnalysisComponent,
+    MainDirectoryStatsAnalysisComponent,
   ],
   imports: [
     HttpClientModule,

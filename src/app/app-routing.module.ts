@@ -3,8 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HospitalAnalysisComponent } from 'src/app/components/hospital-analysis/hospital-analysis.component';
 import { MunicipalityAnalysisComponent } from 'src/app/components/municipality-analysis/municipality-analysis.component';
 import { SpecialtyAnalysisComponent } from 'src/app/components/specialty-analysis/specialty-analysis.component';
+import { MainDirectoryStatsAnalysisComponent } from 'src/app/components/main-directory-stats-analysis/main-directory-stats-analysis.component';
 
 const routes: Routes = [
+  {
+    path: 'main-directory-stats-view',
+    component: MainDirectoryStatsAnalysisComponent,
+  },
   {
     path: 'hospital-stats-view/:hospital-key',
     component: HospitalAnalysisComponent,
@@ -16,6 +21,11 @@ const routes: Routes = [
   {
     path: 'specialty-stats-view/:specialty-key',
     component: SpecialtyAnalysisComponent,
+  },
+  {
+    path: '',
+    redirectTo: '/main-directory-stats-view',
+    pathMatch: 'full',
   },
 ];
 
