@@ -1,4 +1,4 @@
-export const specialisations = [
+export const Specialisations = [
   { specialisationName: 'Pediatrician', specialisationKey: 'PDTN' },
   { specialisationName: 'Dematologist', specialisationKey: 'DMTG' },
   { specialisationName: 'Cardiologist', specialisationKey: 'CDGT' },

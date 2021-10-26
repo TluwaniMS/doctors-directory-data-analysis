@@ -1,4 +1,4 @@
-export const hospitals = [
+export const Hospitals = [
   {
     hospitalName: 'Sekhukhune Private Hospital',
     hospitalKey: 'SKKN',
