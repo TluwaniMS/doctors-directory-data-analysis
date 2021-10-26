@@ -1,9 +1,9 @@
-export const Specialisations = [
-  { specialisationName: 'Pediatrician', specialisationKey: 'PDTN' },
-  { specialisationName: 'Dematologist', specialisationKey: 'DMTG' },
-  { specialisationName: 'Cardiologist', specialisationKey: 'CDGT' },
-  { specialisationName: 'Urologist', specialisationKey: 'URLG' },
-  { specialisationName: 'Neurologist', specialisationKey: 'NRLG' },
-  { specialisationName: 'Psychiatrist', specialisationKey: 'PSCT' },
-  { specialisationName: 'Radiologist', specialisationKey: 'RDLG' },
+export const Specialisations: any[] = [
+  { title: 'Pediatrician', specialisationKey: 'PDTN' },
+  { title: 'Dematologist', specialisationKey: 'DMTG' },
+  { title: 'Cardiologist', specialisationKey: 'CDGT' },
+  { title: 'Urologist', specialisationKey: 'URLG' },
+  { title: 'Neurologist', specialisationKey: 'NRLG' },
+  { title: 'Psychiatrist', specialisationKey: 'PSCT' },
+  { title: 'Radiologist', specialisationKey: 'RDLG' },
 ];

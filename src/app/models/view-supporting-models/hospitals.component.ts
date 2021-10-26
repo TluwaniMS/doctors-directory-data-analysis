@@ -1,54 +1,54 @@
-export const Hospitals = [
+export const Hospitals: any[] = [
   {
-    hospitalName: 'Sekhukhune Private Hospital',
+    title: 'Sekhukhune Private Hospital',
     hospitalKey: 'SKKN',
   },
   {
-    hospitalName: 'Shapo Private Hospital',
+    title: 'Shapo Private Hospital',
     hospitalKey: 'SHPO',
   },
   {
-    hospitalName: 'Polokwane Hospital',
+    title: 'Polokwane Hospital',
     hospitalKey: 'PLKH',
   },
   {
-    hospitalName: 'Botlokwa Hospital',
+    title: 'Botlokwa Hospital',
     hospitalKey: 'BTLK',
   },
   {
-    hospitalName: 'Marobjyane Private Hospital',
+    title: 'Marobjyane Private Hospital',
     hospitalKey: 'MRBJ',
   },
   {
-    hospitalName: 'Ntsundeni Private Hospital',
+    title: 'Ntsundeni Private Hospital',
     hospitalKey: 'NTNP',
   },
   {
-    hospitalName: 'Moshe Hospital',
+    title: 'Moshe Hospital',
     hospitalKey: 'MSHH',
   },
   {
-    hospitalName: 'Marabastad Hospital',
+    title: 'Marabastad Hospital',
     hospitalKey: 'MRSB',
   },
   {
-    hospitalName: 'Baloyi Hospital',
+    title: 'Baloyi Hospital',
     hospitalKey: 'BLYH',
   },
   {
-    hospitalName: 'Vhatwanamba Private Health Care',
+    title: 'Vhatwanamba Private Health Care',
     hospitalKey: 'VTPH',
   },
   {
-    hospitalName: 'Bulombo Hospital',
+    title: 'Bulombo Hospital',
     hospitalKey: 'BLMH',
   },
   {
-    hospitalName: 'Mashashane Hospital',
+    title: 'Mashashane Hospital',
     hospitalKey: 'MSSH',
   },
   {
-    hospitalName: 'dendron Health Centre',
+    title: 'dendron Health Centre',
     hospitalKey: 'DNDH',
   },
 ];

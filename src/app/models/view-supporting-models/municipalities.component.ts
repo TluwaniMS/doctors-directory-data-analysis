@@ -1,7 +1,7 @@
-export const Municipalities = [
-  { municipalityName: 'Blouberg Municipality', municipalityKey: 'BLBG' },
-  { municipalityName: 'Capricorn Municipality', municipalityKey: 'CPRN' },
-  { municipalityName: 'Ekhuruleni Municipality', municipalityKey: 'EKRN' },
-  { municipalityName: 'Waterval Municipality', municipalityKey: 'WTRV' },
-  { municipalityName: 'Luonde Municipality', municipalityKey: 'LNDE' },
+export const Municipalities: any[] = [
+  { title: 'Blouberg Municipality', municipalityKey: 'BLBG' },
+  { title: 'Capricorn Municipality', municipalityKey: 'CPRN' },
+  { title: 'Ekhuruleni Municipality', municipalityKey: 'EKRN' },
+  { title: 'Waterval Municipality', municipalityKey: 'WTRV' },
+  { title: 'Luonde Municipality', municipalityKey: 'LNDE' },
 ];
