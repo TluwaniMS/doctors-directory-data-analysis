@@ -3,6 +3,7 @@ import { NbSidebarService } from '@nebular/theme';
 import { NbMenuService } from '@nebular/theme';
 import { NbMenuItem } from '@nebular/theme';
 import { MenuItems } from 'src/app/models/view-supporting-models/main-side-panel-menu-items.component';
+import { ViewSupportingModelTitles } from 'src/app/models/operational-support-models/view-supporting-model-titles.component';
 
 @Component({
   selector: 'app-root',
@@ -33,13 +34,13 @@ export class AppComponent {
 
   checkItemTitleAndCallLinkedFunction(itemTitle: string, selectedItem: any) {
     switch (itemTitle) {
-      case 'Municipalities':
+      case ViewSupportingModelTitles.Municipalities:
         this.getMunicipalityStatsByKey(selectedItem.municipalityKey);
         break;
-      case 'Hospitals':
+      case ViewSupportingModelTitles.Hospitals:
         this.getHospitalStatsByKey(selectedItem.hospitalKey);
         break;
-      case 'Specialisations':
+      case ViewSupportingModelTitles.Specialisations:
         this.getSpecialtyStatsByKey(selectedItem.specialisationKey);
         break;
     }
