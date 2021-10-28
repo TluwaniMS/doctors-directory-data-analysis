@@ -35,26 +35,26 @@ export class AppComponent {
   checkItemTitleAndCallLinkedFunction(itemTitle: string, selectedItem: any) {
     switch (itemTitle) {
       case ViewSupportingModelTitles.Municipalities:
-        this.getMunicipalityStatsByKey(selectedItem.municipalityKey);
+        this.navigateToMunicipalityStatsByKey(selectedItem.municipalityKey);
         break;
       case ViewSupportingModelTitles.Hospitals:
-        this.getHospitalStatsByKey(selectedItem.hospitalKey);
+        this.navigateToHospitalStatsByKey(selectedItem.hospitalKey);
         break;
       case ViewSupportingModelTitles.Specialisations:
-        this.getSpecialtyStatsByKey(selectedItem.specialisationKey);
+        this.navigateToSpecialtyStatsByKey(selectedItem.specialisationKey);
         break;
     }
   }
 
-  getHospitalStatsByKey(hospitalKey: string) {
+  navigateToHospitalStatsByKey(hospitalKey: string) {
     console.log(hospitalKey);
   }
 
-  getMunicipalityStatsByKey(municipalityKey: string) {
+  navigateToMunicipalityStatsByKey(municipalityKey: string) {
     console.log(municipalityKey);
   }
 
-  getSpecialtyStatsByKey(specialtyKey: string) {
+  navigateToSpecialtyStatsByKey(specialtyKey: string) {
     console.log(specialtyKey);
   }
 }
