@@ -16,6 +16,14 @@ export class SpecialtyAnalysisComponent implements OnInit {
 
   ngOnInit(): void {
     this.specialtyKey = this.route.snapshot.paramMap.get('specialtyKey');
-    console.log(this.specialtyKey);
+    this.getSPecialtyStats(this.specialtyKey);
+  }
+
+  getSPecialtyStats(specialtyKey: string) {
+    this.specialtyStatsEndPointService
+      .getSpecialyStats(specialtyKey)
+      .then((response) => {
+        console.log(response);
+      });
   }
 }

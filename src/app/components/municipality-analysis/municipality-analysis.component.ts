@@ -16,6 +16,14 @@ export class MunicipalityAnalysisComponent implements OnInit {
 
   ngOnInit(): void {
     this.municipalityKey = this.route.snapshot.paramMap.get('municipalityKey');
-    console.log(this.municipalityKey);
+    this.getMunicipalityStats(this.municipalityKey);
+  }
+
+  getMunicipalityStats(municipalityKey: string) {
+    this.municipalityStatsEndPointService
+      .getMunicipalityStats(municipalityKey)
+      .then((response) => {
+        console.log(response);
+      });
   }
 }

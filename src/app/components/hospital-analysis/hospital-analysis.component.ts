@@ -16,6 +16,14 @@ export class HospitalAnalysisComponent implements OnInit {
 
   ngOnInit(): void {
     this.hospitalKey = this.route.snapshot.paramMap.get('hospitalKey');
-    console.log(this.hospitalKey);
+    this.getHospitalStats(this.hospitalKey);
+  }
+
+  getHospitalStats(hospitalKey: string) {
+    this.hospitalStatsEndPointService
+      .getHospitalStats(hospitalKey)
+      .then((response) => {
+        console.log(response);
+      });
   }
 }
