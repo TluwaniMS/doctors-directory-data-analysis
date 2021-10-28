@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { SpecialtyStatsEndPointService } from 'src/app/services/end-point-services/specialty-end-point-service.service';
 
 @Component({
   selector: 'app-specialty-analysis',
@@ -8,7 +9,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SpecialtyAnalysisComponent implements OnInit {
   specialtyKey: string | any;
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private specialtyStatsEndPointService: SpecialtyStatsEndPointService
+  ) {}
 
   ngOnInit(): void {
     this.specialtyKey = this.route.snapshot.paramMap.get('specialtyKey');
