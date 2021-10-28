@@ -52,17 +52,14 @@ export class AppComponent {
   }
 
   navigateToHospitalStatsByKey(hospitalKey: string) {
-    console.log(hospitalKey);
     this.route.navigate(['/hospital-stats-view', hospitalKey]);
   }
 
   navigateToMunicipalityStatsByKey(municipalityKey: string) {
-    console.log(municipalityKey);
     this.route.navigate(['/municipality-stats-view', municipalityKey]);
   }
 
   navigateToSpecialtyStatsByKey(specialtyKey: string) {
-    console.log(specialtyKey);
     this.route.navigate(['/specialty-stats-view', specialtyKey]);
   }
 }
