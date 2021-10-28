@@ -11,7 +11,7 @@ export class SpecialtyAnalysisComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.specialtyKey = this.route.snapshot.paramMap.get('municipalityKey');
+    this.specialtyKey = this.route.snapshot.paramMap.get('specialtyKey');
     console.log(this.specialtyKey);
   }
 }
