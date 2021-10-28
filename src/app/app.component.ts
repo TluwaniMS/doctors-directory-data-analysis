@@ -31,6 +31,8 @@ export class AppComponent {
         this.selectedItem
       );
     });
+
+    this.route.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
   displaySideBar() {
