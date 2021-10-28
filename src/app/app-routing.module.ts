@@ -11,15 +11,15 @@ const routes: Routes = [
     component: MainDirectoryStatsAnalysisComponent,
   },
   {
-    path: 'hospital-stats-view/:hospital-key',
+    path: 'hospital-stats-view/:hospitalKey',
     component: HospitalAnalysisComponent,
   },
   {
-    path: 'municipality-stats-view/:municipality-key',
+    path: 'municipality-stats-view/:municipalityKey',
     component: MunicipalityAnalysisComponent,
   },
   {
-    path: 'specialty-stats-view/:specialty-key',
+    path: 'specialty-stats-view/:specialtyKey',
     component: SpecialtyAnalysisComponent,
   },
   {
