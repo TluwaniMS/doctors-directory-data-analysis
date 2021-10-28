@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 import { NbSidebarService } from '@nebular/theme';
 import { NbMenuService } from '@nebular/theme';
 import { NbMenuItem } from '@nebular/theme';
@@ -16,7 +17,11 @@ export class AppComponent {
   itemTitle: any | string;
   selectedItem: any | string;
 
-  constructor(private sidebarService: NbSidebarService, menu: NbMenuService) {
+  constructor(
+    private sidebarService: NbSidebarService,
+    menu: NbMenuService,
+    private route: Router
+  ) {
     menu.onItemClick().subscribe((itemClicked) => {
       this.itemTitle = itemClicked.item.parent?.title;
       this.selectedItem = itemClicked.item;
@@ -48,13 +53,16 @@ export class AppComponent {
 
   navigateToHospitalStatsByKey(hospitalKey: string) {
     console.log(hospitalKey);
+    this.route.navigate(['/hospital-stats-view', hospitalKey]);
   }
 
   navigateToMunicipalityStatsByKey(municipalityKey: string) {
     console.log(municipalityKey);
+    this.route.navigate(['/municipality-stats-view', municipalityKey]);
   }
 
   navigateToSpecialtyStatsByKey(specialtyKey: string) {
     console.log(specialtyKey);
+    this.route.navigate(['/specialty-stats-view', specialtyKey]);
   }
 }
