@@ -6,7 +6,7 @@ import { ViewSupportingModelTitles } from '../operational-support-models/view-su
 export const MenuItems: any[] = [
   {
     title: ViewSupportingModelTitles.Municipalities,
-    expanded: true,
+    expanded: false,
     children: Municipalities,
   },
   {
