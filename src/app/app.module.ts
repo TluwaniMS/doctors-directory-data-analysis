@@ -10,6 +10,7 @@ import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSidebarModule } from '@nebular/theme';
 import { NbMenuModule } from '@nebular/theme';
+import { NbCardModule } from '@nebular/theme';
 import { MunicipalityAnalysisComponent } from './components/municipality-analysis/municipality-analysis.component';
 import { HospitalAnalysisComponent } from './components/hospital-analysis/hospital-analysis.component';
 import { SpecialtyAnalysisComponent } from './components/specialty-analysis/specialty-analysis.component';
@@ -33,6 +34,7 @@ import { MainDirectoryStatsAnalysisComponent } from './components/main-directory
     NbLayoutModule,
     NbEvaIconsModule,
     NbMenuModule.forRoot(),
+    NbCardModule,
   ],
   providers: [...EndPointServices],
   bootstrap: [AppComponent],
