@@ -17,10 +17,10 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
   totalHospitals: Totals | any;
 
   single: any[] | any;
-  view: [number,number] = [700, 400];
+  view: [number, number] = [700, 400];
 
   cardColor: string = '#232837';
-  colorScheme = { domain: ['#5AA454', '#E44D25', '#CFC0BB'] };
+  colorScheme: any = { domain: ['#5AA454', '#E44D25', '#CFC0BB'] };
 
   constructor(
     private mainDirectoryStatsEndPointService: MainDirectoryStatsEndPointService,
