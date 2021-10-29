@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { EndPointServices } from 'src/app/service-organiser/end-point-services';
+import { AuxiliaryServices } from 'src/app/service-organiser/auxiliary-services';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +37,7 @@ import { MainDirectoryStatsAnalysisComponent } from './components/main-directory
     NbMenuModule.forRoot(),
     NbCardModule,
   ],
-  providers: [...EndPointServices],
+  providers: [...EndPointServices, ...AuxiliaryServices],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
