@@ -16,7 +16,6 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
   totalMunicipalities: Totals | any;
   totalHospitals: Totals | any;
 
-  single: any[] | any;
   view: [number, number] = [700, 400];
 
   cardColor: string = '#232837';
