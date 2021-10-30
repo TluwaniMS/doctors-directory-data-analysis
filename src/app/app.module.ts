@@ -17,6 +17,7 @@ import { MunicipalityAnalysisComponent } from './components/municipality-analysi
 import { HospitalAnalysisComponent } from './components/hospital-analysis/hospital-analysis.component';
 import { SpecialtyAnalysisComponent } from './components/specialty-analysis/specialty-analysis.component';
 import { MainDirectoryStatsAnalysisComponent } from './components/main-directory-stats-analysis/main-directory-stats-analysis.component';
+import { ProjectLandingPageComponent } from './components/project-landing-page/project-landing-page.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MainDirectoryStatsAnalysisComponent } from './components/main-directory
     HospitalAnalysisComponent,
     SpecialtyAnalysisComponent,
     MainDirectoryStatsAnalysisComponent,
+    ProjectLandingPageComponent,
   ],
   imports: [
     NgxChartsModule,
