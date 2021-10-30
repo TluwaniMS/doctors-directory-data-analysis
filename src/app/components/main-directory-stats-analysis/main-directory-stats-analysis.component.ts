@@ -38,6 +38,7 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
   }
 
   prepareCardChartData() {
+    const preparedCardDisplayData = [];
     const preparedTotalDoctors =
       this.mainDirectoryStatsAuxiliaryService.formatDataForCardDataDisplay(
         ViewSupportingModelTitles.Doctors,
@@ -54,10 +55,12 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
         this.totalHospitals
       );
 
-    this.cardChartData.push(
+    preparedCardDisplayData.push(
       preparedTotalHospitals,
       preparedTotalMunicipalities,
       preparedTotalDoctors
     );
+
+    this.cardChartData = preparedCardDisplayData;
   }
 }
