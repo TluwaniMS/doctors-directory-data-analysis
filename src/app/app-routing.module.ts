@@ -4,13 +4,8 @@ import { HospitalAnalysisComponent } from 'src/app/components/hospital-analysis/
 import { MunicipalityAnalysisComponent } from 'src/app/components/municipality-analysis/municipality-analysis.component';
 import { SpecialtyAnalysisComponent } from 'src/app/components/specialty-analysis/specialty-analysis.component';
 import { MainDirectoryStatsAnalysisComponent } from 'src/app/components/main-directory-stats-analysis/main-directory-stats-analysis.component';
-import { ProjectLandingPageComponent } from 'src/app/components/project-landing-page/project-landing-page.component';
 
 const routes: Routes = [
-  {
-    path: 'project-landing-page',
-    component: ProjectLandingPageComponent,
-  },
   {
     path: 'main-directory-stats-view',
     component: MainDirectoryStatsAnalysisComponent,
@@ -29,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/project-landing-page',
+    redirectTo: '/main-directory-stats-view',
     pathMatch: 'full',
   },
 ];
