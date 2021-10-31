@@ -1,7 +1,9 @@
-<ngx-charts-number-card
-  [view]="view"
-  [scheme]="colorScheme"
-  [results]="cardChartData"
-  [cardColor]="cardColor"
->
-</ngx-charts-number-card>
+<ng-template #numberCardChartsContainer>
+  <ngx-charts-number-card
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="cardChartData"
+    [cardColor]="cardColor"
+  >
+  </ngx-charts-number-card>
+</ng-template>
