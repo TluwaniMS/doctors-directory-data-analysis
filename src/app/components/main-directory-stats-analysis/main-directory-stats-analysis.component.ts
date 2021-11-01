@@ -11,7 +11,7 @@ import { ViewSupportingModelTitles } from 'src/app/models/operational-support-mo
 })
 export class MainDirectoryStatsAnalysisComponent implements OnInit {
   // card charts config and data
-  cardChartData: any[] = [];
+  cardChartData: any[] | any;
   totalDoctors: Totals | any;
   totalMunicipalities: Totals | any;
   totalHospitals: Totals | any;
@@ -20,6 +20,20 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
 
   cardColor: string = '#232837';
   cardColorScheme: any = { domain: ['#5AA454', '#E44D25', '#CFC0BB'] };
+
+  // doughnut chart config and data
+  genderDoughnutChart: any[] | any;
+
+  genderDoughnutView: [number, number] = [400, 400];
+
+  genderDoughnutColorScheme = {
+    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
+  };
+
+  genderDoughnutGradient: boolean = true;
+  genderDoughnutShowLegend: boolean = true;
+  genderShowLabels: boolean = true;
+  genderDoughnutIsDoughnut: boolean = false;
 
   constructor(
     private mainDirectoryStatsEndPointService: MainDirectoryStatsEndPointService,
