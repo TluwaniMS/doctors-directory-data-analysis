@@ -10,26 +10,23 @@ import { ViewSupportingModelTitles } from 'src/app/models/operational-support-mo
   styleUrls: ['./main-directory-stats-analysis.component.css'],
 })
 export class MainDirectoryStatsAnalysisComponent implements OnInit {
-  // card charts config and data
-  cardChartData: any[] | any;
   totalDoctors: Totals | any;
   totalMunicipalities: Totals | any;
   totalHospitals: Totals | any;
 
+  totalSpecialtyCount: any[] | any;
+  // card charts config and data
+  cardChartData: any[] | any;
   cardView: [number, number] = [400, 400];
-
   cardColor: string = '#232837';
   cardColorScheme: any = { domain: ['#5AA454', '#E44D25', '#CFC0BB'] };
 
   // doughnut chart config and data
   specialtyDoughnutChartData: any[] | any;
-
   specialtyDoughnutView: [number, number] = [400, 400];
-
   specialtyDoughnutColorScheme: any = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
+    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA','#CFC0BB', '#E44D25','5AA454'],
   };
-
   specialtyDoughnutGradient: boolean = true;
   specialtyDoughnutShowLegend: boolean = true;
   specialtyShowLabels: boolean = true;
@@ -44,11 +41,12 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
     this.mainDirectoryStatsEndPointService
       .getMainDirectoryStats()
       .then((response) => {
-        console.log(response);
         this.totalDoctors = response.totalDoctors;
         this.totalHospitals = response.totalHospitals;
         this.totalMunicipalities = response.totalMunicipalities;
+        this.totalSpecialtyCount = response.totalDoctorsGroupedBySpecialty;
         this.prepareCardChartData();
+        this.prepareSpecialtyDataForDoughnut()
       });
   }
 
@@ -77,5 +75,12 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
     );
 
     this.cardChartData = preparedCardDisplayData;
+  }
+
+  prepareSpecialtyDataForDoughnut() {
+    this.specialtyDoughnutChartData =
+      this.mainDirectoryStatsAuxiliaryService.formatSpecialtyDataForDoughnutGraphDisplayData(
+        this.totalSpecialtyCount
+      );
   }
 }
