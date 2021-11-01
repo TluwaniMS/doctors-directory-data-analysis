@@ -22,18 +22,18 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
   cardColorScheme: any = { domain: ['#5AA454', '#E44D25', '#CFC0BB'] };
 
   // doughnut chart config and data
-  genderDoughnutChart: any[] | any;
+  specialtyDoughnutChartData: any[] | any;
 
-  genderDoughnutView: [number, number] = [400, 400];
+  specialtyDoughnutView: [number, number] = [400, 400];
 
-  genderDoughnutColorScheme = {
+  specialtyDoughnutColorScheme: any = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
   };
 
-  genderDoughnutGradient: boolean = true;
-  genderDoughnutShowLegend: boolean = true;
-  genderShowLabels: boolean = true;
-  genderDoughnutIsDoughnut: boolean = false;
+  specialtyDoughnutGradient: boolean = true;
+  specialtyDoughnutShowLegend: boolean = true;
+  specialtyShowLabels: boolean = true;
+  specialtyDoughnutIsDoughnut: boolean = false;
 
   constructor(
     private mainDirectoryStatsEndPointService: MainDirectoryStatsEndPointService,
