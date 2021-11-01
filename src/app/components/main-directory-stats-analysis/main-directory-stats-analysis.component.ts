@@ -16,10 +16,10 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
   totalMunicipalities: Totals | any;
   totalHospitals: Totals | any;
 
-  view: [number, number] = [400, 400];
+  cardView: [number, number] = [400, 400];
 
   cardColor: string = '#232837';
-  colorScheme: any = { domain: ['#5AA454', '#E44D25', '#CFC0BB'] };
+  cardColorScheme: any = { domain: ['#5AA454', '#E44D25', '#CFC0BB'] };
 
   constructor(
     private mainDirectoryStatsEndPointService: MainDirectoryStatsEndPointService,
@@ -30,6 +30,7 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
     this.mainDirectoryStatsEndPointService
       .getMainDirectoryStats()
       .then((response) => {
+        console.log(response);
         this.totalDoctors = response.totalDoctors;
         this.totalHospitals = response.totalHospitals;
         this.totalMunicipalities = response.totalMunicipalities;
@@ -40,17 +41,17 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
   prepareCardChartData() {
     const preparedCardDisplayData = [];
     const preparedTotalDoctors =
-      this.mainDirectoryStatsAuxiliaryService.formatDataForCardDataDisplay(
+      this.mainDirectoryStatsAuxiliaryService.formatDataForGraphDisplay(
         ViewSupportingModelTitles.Doctors,
         this.totalDoctors
       );
     const preparedTotalMunicipalities =
-      this.mainDirectoryStatsAuxiliaryService.formatDataForCardDataDisplay(
+      this.mainDirectoryStatsAuxiliaryService.formatDataForGraphDisplay(
         ViewSupportingModelTitles.Municipalities,
         this.totalMunicipalities
       );
     const preparedTotalHospitals =
-      this.mainDirectoryStatsAuxiliaryService.formatDataForCardDataDisplay(
+      this.mainDirectoryStatsAuxiliaryService.formatDataForGraphDisplay(
         ViewSupportingModelTitles.Hospitals,
         this.totalHospitals
       );
