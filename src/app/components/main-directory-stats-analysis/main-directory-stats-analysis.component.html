@@ -1,5 +1,8 @@
 <ng-container *ngTemplateOutlet="numberCardChartsContainer"> </ng-container>
-<ng-container *ngTemplateOutlet="specialtyDoughnutChartContainer"> </ng-container>
+<ng-container *ngTemplateOutlet="specialtyDoughnutChartContainer">
+</ng-container>
+<ng-container *ngTemplateOutlet="municipalityTotalHospitalsGraphChart">
+</ng-container>
 
 <ng-template #numberCardChartsContainer>
   <ngx-charts-number-card
@@ -19,4 +22,21 @@
     [gradient]="specialtyDoughnutGradient"
   >
   </ngx-charts-advanced-pie-chart>
+</ng-template>
+
+<ng-template #municipalityTotalHospitalsGraphChart>
+  <ngx-charts-bar-vertical
+    [view]="municipalityHospitalsView"
+    [scheme]="municipalityHospitalsColorScheme"
+    [results]="municipalityHospitalsGraphChartData"
+    [gradient]="municipalityHospitalsGradient"
+    [xAxis]="municipalityHospitalsShowXAxis"
+    [yAxis]="municipalityHospitalsShowYAxis"
+    [legend]="municipalityHospitalsShowLegend"
+    [showXAxisLabel]="municipalityHospitalsShowXAxisLabel"
+    [showYAxisLabel]="municipalityHospitalsShowYAxisLabel"
+    [xAxisLabel]="municipalityHospitalsXaxisLabel"
+    [yAxisLabel]="municipalityHospitalsYaxisLabel"
+  >
+  </ngx-charts-bar-vertical>
 </ng-template>

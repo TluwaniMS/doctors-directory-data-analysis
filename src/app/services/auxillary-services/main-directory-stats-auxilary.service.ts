@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Totals } from 'src/app/models/interfaces/total-property-interface';
 import { Specialisations } from 'src/app/models/view-supporting-models/specialties.component';
+import { Municipalities } from 'src/app/models/view-supporting-models/municipalities.component';
+
 @Injectable()
 export class MainDirectoryStatsAuxiliaryService {
   formatDataForGraphDisplay(propertyName: string, data: Totals) {
@@ -31,5 +33,23 @@ export class MainDirectoryStatsAuxiliaryService {
     return arrayOfFormattedSpecialisations;
   }
 
-  formatTotalHospitalMunicipalitesGraphDisplayData(data: any[]) {}
+  formatTotalHospitalMunicipalitesGraphDisplayData(data: any[]) {
+    const arrayOfFormattedMunicipalities: any[] = [];
+
+    Municipalities.forEach((municipalProperties) => {
+      const linkedMunicipality = data.filter(
+        (municipality) =>
+          municipality.municipalityName === municipalProperties.title
+      );
+
+      const formattedMunicipality = {
+        name: linkedMunicipality[0].municipalityName,
+        value: linkedMunicipality[0].totalHospitals,
+      };
+
+      arrayOfFormattedMunicipalities.push(formattedMunicipality);
+    });
+
+    return arrayOfFormattedMunicipalities;
+  }
 }

@@ -43,6 +43,20 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
   specialtyDoughnutIsDoughnut: boolean = false;
 
   // bar graph chart for total hospitals in municipality
+  municipalityHospitalsGraphChartData: any[] | any;
+  municipalityHospitalsView: [number, number] = [700, 400];
+  municipalityHospitalsShowXAxis: boolean = true;
+  municipalityHospitalsShowYAxis: boolean = true;
+  municipalityHospitalsGradient: boolean = false;
+  municipalityHospitalsShowLegend: boolean = true;
+  municipalityHospitalsShowXAxisLabel: boolean = true;
+  municipalityHospitalsXaxisLabel = 'Municipalities';
+  municipalityHospitalsShowYAxisLabel: boolean = true;
+  municipalityHospitalsYaxisLabel = 'Hospitals';
+
+  municipalityHospitalsColorScheme: any = {
+    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
+  };
 
   constructor(
     private mainDirectoryStatsEndPointService: MainDirectoryStatsEndPointService,
@@ -53,14 +67,15 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
     this.mainDirectoryStatsEndPointService
       .getMainDirectoryStats()
       .then((response) => {
-        console.log(response);
         this.totalDoctors = response.totalDoctors;
         this.totalHospitals = response.totalHospitals;
         this.totalMunicipalities = response.totalMunicipalities;
         this.totalSpecialtyCount = response.totalDoctorsGroupedBySpecialty;
-
+        this.totalHospitalsOfEachMunicipality =
+          response.totalHospitalsOfEachMunicipality;
         this.prepareCardChartData();
         this.prepareSpecialtyDataForDoughnut();
+        this.prepareGraphDataForTotalMunicipalities();
       });
   }
 
@@ -98,5 +113,10 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
       );
   }
 
-  prepareGraphDataForTotalMunicipalities() {}
+  prepareGraphDataForTotalMunicipalities() {
+    this.municipalityHospitalsGraphChartData =
+      this.mainDirectoryStatsAuxiliaryService.formatTotalHospitalMunicipalitesGraphDisplayData(
+        this.totalHospitalsOfEachMunicipality
+      );
+  }
 }
