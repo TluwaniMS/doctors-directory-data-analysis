@@ -15,22 +15,34 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
   totalHospitals: Totals | any;
 
   totalSpecialtyCount: any[] | any;
-  // card charts config and data
+
+  totalHospitalsOfEachMunicipality: any[] | any;
+  // card charts config and data for summarised directory data
   cardChartData: any[] | any;
   cardView: [number, number] = [400, 400];
   cardColor: string = '#232837';
   cardColorScheme: any = { domain: ['#5AA454', '#E44D25', '#CFC0BB'] };
 
-  // doughnut chart config and data
+  // doughnut chart config and data for specialties
   specialtyDoughnutChartData: any[] | any;
   specialtyDoughnutView: [number, number] = [400, 400];
   specialtyDoughnutColorScheme: any = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA','#CFC0BB', '#E44D25','5AA454'],
+    domain: [
+      '#5AA454',
+      '#A10A28',
+      '#C7B42C',
+      '#AAAAAA',
+      '#CFC0BB',
+      '#E44D25',
+      '5AA454',
+    ],
   };
   specialtyDoughnutGradient: boolean = true;
   specialtyDoughnutShowLegend: boolean = true;
   specialtyShowLabels: boolean = true;
   specialtyDoughnutIsDoughnut: boolean = false;
+
+  // bar graph chart for total hospitals in municipality
 
   constructor(
     private mainDirectoryStatsEndPointService: MainDirectoryStatsEndPointService,
@@ -41,12 +53,14 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
     this.mainDirectoryStatsEndPointService
       .getMainDirectoryStats()
       .then((response) => {
+        console.log(response);
         this.totalDoctors = response.totalDoctors;
         this.totalHospitals = response.totalHospitals;
         this.totalMunicipalities = response.totalMunicipalities;
         this.totalSpecialtyCount = response.totalDoctorsGroupedBySpecialty;
+
         this.prepareCardChartData();
-        this.prepareSpecialtyDataForDoughnut()
+        this.prepareSpecialtyDataForDoughnut();
       });
   }
 
@@ -83,4 +97,6 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
         this.totalSpecialtyCount
       );
   }
+
+  prepareGraphDataForTotalMunicipalities() {}
 }

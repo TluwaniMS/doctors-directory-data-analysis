@@ -4,12 +4,12 @@ import { Specialisations } from 'src/app/models/view-supporting-models/specialti
 @Injectable()
 export class MainDirectoryStatsAuxiliaryService {
   formatDataForGraphDisplay(propertyName: string, data: Totals) {
-    const cardData = {
+    const graphData = {
       name: propertyName,
       value: data.total,
     };
 
-    return cardData;
+    return graphData;
   }
 
   formatSpecialtyDataForDoughnutGraphDisplayData(data: any[]) {
@@ -30,4 +30,6 @@ export class MainDirectoryStatsAuxiliaryService {
 
     return arrayOfFormattedSpecialisations;
   }
+
+  formatTotalHospitalMunicipalitesGraphDisplayData(data: any[]) {}
 }
