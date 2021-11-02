@@ -3,3 +3,10 @@
   flex-direction: row;
   height: 200px;
 }
+
+.specialty-doughnut-chart-container {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  width: 100%;
+}

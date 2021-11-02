@@ -1,5 +1,5 @@
 <ng-container *ngTemplateOutlet="mainNumberCardChartContainer"> </ng-container>
-<ng-container *ngTemplateOutlet="specialtyDoughnutChartContainer">
+<ng-container *ngTemplateOutlet="mainSpecialtyDoughnutChartContainer">
 </ng-container>
 <ng-container *ngTemplateOutlet="municipalityTotalHospitalsGraphChart">
 </ng-container>
@@ -21,9 +21,15 @@
   </ngx-charts-number-card>
 </ng-template>
 
+<ng-template #mainSpecialtyDoughnutChartContainer>
+  <div class="specialty-doughnut-chart-container">
+    <ng-container *ngTemplateOutlet="specialtyDoughnutChartContainer">
+    </ng-container>
+  </div>
+</ng-template>
+
 <ng-template #specialtyDoughnutChartContainer>
   <ngx-charts-advanced-pie-chart
-    [view]="specialtyDoughnutView"
     [scheme]="specialtyDoughnutColorScheme"
     [results]="specialtyDoughnutChartData"
     [gradient]="specialtyDoughnutGradient"
