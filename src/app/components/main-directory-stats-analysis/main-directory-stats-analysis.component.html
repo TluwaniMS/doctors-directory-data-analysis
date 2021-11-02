@@ -1,4 +1,4 @@
-<ng-container *ngTemplateOutlet="numberCardChartsContainer"> </ng-container>
+<ng-container *ngTemplateOutlet="mainNumberCardChartContainer"> </ng-container>
 <ng-container *ngTemplateOutlet="specialtyDoughnutChartContainer">
 </ng-container>
 <ng-container *ngTemplateOutlet="municipalityTotalHospitalsGraphChart">
@@ -6,9 +6,14 @@
 <ng-container *ngTemplateOutlet="municipalityTotalDoctorsGroupedByGender">
 </ng-container>
 
+<ng-template #mainNumberCardChartContainer>
+  <div class="number-card-chart-container">
+    <ng-container *ngTemplateOutlet="numberCardChartsContainer"> </ng-container>
+  </div>
+</ng-template>
+
 <ng-template #numberCardChartsContainer>
   <ngx-charts-number-card
-    [view]="cardView"
     [scheme]="cardColorScheme"
     [results]="cardChartData"
     [cardColor]="cardColor"
