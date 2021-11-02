@@ -3,6 +3,8 @@
 </ng-container>
 <ng-container *ngTemplateOutlet="municipalityTotalHospitalsGraphChart">
 </ng-container>
+<ng-container *ngTemplateOutlet="municipalityTotalDoctorsGroupedByGender">
+</ng-container>
 
 <ng-template #numberCardChartsContainer>
   <ngx-charts-number-card
@@ -39,4 +41,21 @@
     [yAxisLabel]="municipalityHospitalsYaxisLabel"
   >
   </ngx-charts-bar-vertical>
+</ng-template>
+
+<ng-template #municipalityTotalDoctorsGroupedByGender>
+  <ngx-charts-bar-vertical-stacked
+    [view]="municipalityDoctorsGroupedByGenderView"
+    [scheme]="municipalityDoctorsGroupedByGenderColorScheme"
+    [results]="municipalityDoctorsGroupedByGenderGraphChartData"
+    [gradient]="municipalityDoctorsGroupedByGenderGradient"
+    [xAxis]="municipalityDoctorsGroupedByGenderShowXAxis"
+    [yAxis]="municipalityDoctorsGroupedByGenderShowYAxis"
+    [legend]="municipalityDoctorsGroupedByGenderShowLegend"
+    [showXAxisLabel]="municipalityDoctorsGroupedByGenderShowXAxisLabel"
+    [showYAxisLabel]="municipalityDoctorsGroupedByGendershowYAxisLabel"
+    [xAxisLabel]="municipalityDoctorsGroupedByGenderxAxisLabel"
+    [yAxisLabel]="municipalityDoctorsGroupedByGenderyAxisLabel"
+    [animations]="municipalityDoctorsGroupedByGenderAnimations"
+  ></ngx-charts-bar-vertical-stacked>
 </ng-template>

@@ -17,6 +17,8 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
   totalSpecialtyCount: any[] | any;
 
   totalHospitalsOfEachMunicipality: any[] | any;
+
+  totalDoctorsInMunicipalitiesGroupedByGender: any[] | any;
   // card charts config and data for summarised directory data
   cardChartData: any[] | any;
   cardView: [number, number] = [400, 400];
@@ -58,6 +60,23 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
   };
 
+  // bar graph chart for total doctors in municipality grouped by gender
+  municipalityDoctorsGroupedByGenderGraphChartData: any[] | any;
+  municipalityDoctorsGroupedByGenderView: [number, number] = [700, 400];
+  municipalityDoctorsGroupedByGenderShowXAxis: boolean = true;
+  municipalityDoctorsGroupedByGenderShowYAxis: boolean = true;
+  municipalityDoctorsGroupedByGenderGradient: boolean = false;
+  municipalityDoctorsGroupedByGenderShowLegend: boolean = true;
+  municipalityDoctorsGroupedByGenderShowXAxisLabel: boolean = true;
+  municipalityDoctorsGroupedByGenderxAxisLabel: string = 'Country';
+  municipalityDoctorsGroupedByGendershowYAxisLabel: boolean = true;
+  municipalityDoctorsGroupedByGenderyAxisLabel: string = 'Population';
+  municipalityDoctorsGroupedByGenderAnimations: boolean = true;
+
+  municipalityDoctorsGroupedByGenderColorScheme: any = {
+    domain: ['#5AA454', '#C7B42C', '#AAAAAA'],
+  };
+
   constructor(
     private mainDirectoryStatsEndPointService: MainDirectoryStatsEndPointService,
     private mainDirectoryStatsAuxiliaryService: MainDirectoryStatsAuxiliaryService
@@ -73,9 +92,12 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
         this.totalSpecialtyCount = response.totalDoctorsGroupedBySpecialty;
         this.totalHospitalsOfEachMunicipality =
           response.totalHospitalsOfEachMunicipality;
+        this.totalDoctorsInMunicipalitiesGroupedByGender =
+          response.totalGenderCountOfDoctorsInMunicipality;
         this.prepareCardChartData();
         this.prepareSpecialtyDataForDoughnut();
         this.prepareGraphDataForTotalMunicipalities();
+        this.prepareGraphDataForTotalDoctorsInMunicipalityGroupedByGender();
       });
   }
 
@@ -117,6 +139,13 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
     this.municipalityHospitalsGraphChartData =
       this.mainDirectoryStatsAuxiliaryService.formatTotalHospitalMunicipalitesGraphDisplayData(
         this.totalHospitalsOfEachMunicipality
+      );
+  }
+
+  prepareGraphDataForTotalDoctorsInMunicipalityGroupedByGender() {
+    this.municipalityDoctorsGroupedByGenderGraphChartData =
+      this.mainDirectoryStatsAuxiliaryService.formatTotalDoctorsInMunicipalitiesGroupedByGender(
+        this.totalDoctorsInMunicipalitiesGroupedByGender
       );
   }
 }
