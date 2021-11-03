@@ -68,9 +68,9 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
   municipalityDoctorsGroupedByGenderGradient: boolean = false;
   municipalityDoctorsGroupedByGenderShowLegend: boolean = true;
   municipalityDoctorsGroupedByGenderShowXAxisLabel: boolean = true;
-  municipalityDoctorsGroupedByGenderxAxisLabel: string = 'Country';
+  municipalityDoctorsGroupedByGenderxAxisLabel: string = 'Municipalities';
   municipalityDoctorsGroupedByGendershowYAxisLabel: boolean = true;
-  municipalityDoctorsGroupedByGenderyAxisLabel: string = 'Population';
+  municipalityDoctorsGroupedByGenderyAxisLabel: string = 'Doctors';
   municipalityDoctorsGroupedByGenderAnimations: boolean = true;
 
   municipalityDoctorsGroupedByGenderColorScheme: any = {

@@ -3,7 +3,9 @@
 </ng-container>
 <ng-container *ngTemplateOutlet="mainMunicipalityTotalHospitalsGraphChart">
 </ng-container>
-<ng-container *ngTemplateOutlet="municipalityTotalDoctorsGroupedByGender">
+<ng-container
+  *ngTemplateOutlet="mainMunicipalityTotalDoctorsGroupedByGenderGraphChart"
+>
 </ng-container>
 
 <ng-template #mainNumberCardChartContainer>
@@ -60,9 +62,15 @@
   </ngx-charts-bar-vertical>
 </ng-template>
 
+<ng-template #mainMunicipalityTotalDoctorsGroupedByGenderGraphChart>
+  <div class="municipality-total-doctors-grouped-by-gender-chart-container">
+    <ng-container *ngTemplateOutlet="municipalityTotalDoctorsGroupedByGender">
+    </ng-container>
+  </div>
+</ng-template>
+
 <ng-template #municipalityTotalDoctorsGroupedByGender>
   <ngx-charts-bar-vertical-stacked
-    [view]="municipalityDoctorsGroupedByGenderView"
     [scheme]="municipalityDoctorsGroupedByGenderColorScheme"
     [results]="municipalityDoctorsGroupedByGenderGraphChartData"
     [gradient]="municipalityDoctorsGroupedByGenderGradient"
