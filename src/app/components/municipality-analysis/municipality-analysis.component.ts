@@ -13,9 +13,13 @@ export class MunicipalityAnalysisComponent implements OnInit {
   municipalityKey: string | any;
 
   totalDoctorsInMunicipality: any[] | any;
+  totalDoctorsInMunicipalityGroupedByGender: any[] | any;
 
   // card chart data config
   cardChartData: any[] | any;
+
+  // doughnut chart data for gender count
+  genderDoughnutChartData: any[] | any;
   constructor(
     private route: ActivatedRoute,
     private municipalityStatsEndPointService: MunicipalityStatsEndPointService,
@@ -33,7 +37,10 @@ export class MunicipalityAnalysisComponent implements OnInit {
       .then((response) => {
         this.totalDoctorsInMunicipality =
           response.totalDoctorCountInMunicipality;
+        this.totalDoctorsInMunicipalityGroupedByGender =
+          response.totalGenderCountInMunicipality;
         this.prepareNumberChartData();
+        this.prepareGenderDoughnutChartData();
       });
   }
 
@@ -45,5 +52,12 @@ export class MunicipalityAnalysisComponent implements OnInit {
       );
 
     this.cardChartData = [preparedCardData];
+  }
+
+  prepareGenderDoughnutChartData() {
+    this.genderDoughnutChartData =
+      this.municipalityStatsAuxiliaryService.formatGenderDataForDoughnutGraphDisplay(
+        this.totalDoctorsInMunicipalityGroupedByGender
+      );
   }
 }
