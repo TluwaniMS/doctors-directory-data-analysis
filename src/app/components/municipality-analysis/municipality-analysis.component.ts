@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MunicipalityStatsEndPointService } from 'src/app/services/end-point-services/municipality-end-point-service.service';
 import { MunicipalityStatsAuxiliaryService } from 'src/app/services/auxillary-services/municipality-stats-auxiliary.service';
 import { ViewSupportingModelTitles } from 'src/app/models/operational-support-models/view-supporting-model-titles.component';
+import { MainDirectoryStatsAuxiliaryService } from 'src/app/services/auxillary-services/main-directory-stats-auxilary.service';
 
 @Component({
   selector: 'app-municipality-analysis',
@@ -21,10 +22,14 @@ export class MunicipalityAnalysisComponent implements OnInit {
 
   // doughnut chart data for gender count
   genderDoughnutChartData: any[] | any;
+
+  // doughnut chart data for specialty count
+  specialtyDoughnutChartData: any[] | any;
   constructor(
     private route: ActivatedRoute,
     private municipalityStatsEndPointService: MunicipalityStatsEndPointService,
-    private municipalityStatsAuxiliaryService: MunicipalityStatsAuxiliaryService
+    private municipalityStatsAuxiliaryService: MunicipalityStatsAuxiliaryService,
+    private mainDirectoryStatsAuxiliaryService: MainDirectoryStatsAuxiliaryService
   ) {}
 
   ngOnInit(): void {
@@ -65,5 +70,10 @@ export class MunicipalityAnalysisComponent implements OnInit {
       );
   }
 
-  prepareSpecialtyDoughnutChartData() {}
+  prepareSpecialtyDoughnutChartData() {
+    this.specialtyDoughnutChartData =
+      this.mainDirectoryStatsAuxiliaryService.formatSpecialtyDataForDoughnutGraphDisplayData(
+        this.totalSpecialtyCountInMunicipality
+      );
+  }
 }
