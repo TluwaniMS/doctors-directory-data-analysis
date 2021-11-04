@@ -14,6 +14,7 @@ export class MunicipalityAnalysisComponent implements OnInit {
 
   totalDoctorsInMunicipality: any[] | any;
   totalDoctorsInMunicipalityGroupedByGender: any[] | any;
+  totalSpecialtyCountInMunicipality: any[] | any;
 
   // card chart data config
   cardChartData: any[] | any;
@@ -39,8 +40,11 @@ export class MunicipalityAnalysisComponent implements OnInit {
           response.totalDoctorCountInMunicipality;
         this.totalDoctorsInMunicipalityGroupedByGender =
           response.totalGenderCountInMunicipality;
+        this.totalSpecialtyCountInMunicipality =
+          response.totalSpecialtyCountInMunicipality[0].specialties;
         this.prepareNumberChartData();
         this.prepareGenderDoughnutChartData();
+        this.prepareSpecialtyDoughnutChartData();
       });
   }
 
@@ -60,4 +64,6 @@ export class MunicipalityAnalysisComponent implements OnInit {
         this.totalDoctorsInMunicipalityGroupedByGender
       );
   }
+
+  prepareSpecialtyDoughnutChartData() {}
 }
