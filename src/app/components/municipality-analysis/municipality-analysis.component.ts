@@ -16,6 +16,7 @@ export class MunicipalityAnalysisComponent implements OnInit {
   totalDoctorsInMunicipality: any[] | any;
   totalDoctorsInMunicipalityGroupedByGender: any[] | any;
   totalSpecialtyCountInMunicipality: any[] | any;
+  totalHospitalCountInMunicipality: any[] | any;
 
   // card chart data config
   cardChartData: any[] | any;
@@ -47,20 +48,31 @@ export class MunicipalityAnalysisComponent implements OnInit {
           response.totalGenderCountInMunicipality;
         this.totalSpecialtyCountInMunicipality =
           response.totalSpecialtyCountInMunicipality[0].specialties;
-        this.prepareNumberChartData();
+        this.totalHospitalCountInMunicipality =
+          response.totalHospitalsInMunicipality[0];
+        this.prepareDoctorsCountChartData();
         this.prepareGenderDoughnutChartData();
         this.prepareSpecialtyDoughnutChartData();
       });
   }
 
-  prepareNumberChartData() {
-    const preparedCardData =
+  prepareDoctorsCountChartData() {
+    const preparedDoctorsCardData =
       this.municipalityStatsAuxiliaryService.formatGraphDisplayData(
         ViewSupportingModelTitles.Doctors,
         this.totalDoctorsInMunicipality[0].totalDoctors
       );
 
-    this.cardChartData = [preparedCardData];
+    const preparedHospitalsCardData =
+      this.municipalityStatsAuxiliaryService.formatGraphDisplayData(
+        ViewSupportingModelTitles.Hospitals,
+        this.totalHospitalCountInMunicipality.totalHospitals
+      );
+
+    this.cardChartData = [
+      preparedDoctorsCardData,
+      preparedHospitalsCardData,
+    ];
   }
 
   prepareGenderDoughnutChartData() {
