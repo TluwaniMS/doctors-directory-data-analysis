@@ -25,4 +25,19 @@ export class MunicipalityStatsAuxiliaryService {
 
     return [totalFemalesFormattedData, totalMalesFormattedData];
   }
+
+  formatDoctorsCountInHospitals(data: any[]) {
+    const preparedDoctorsCountInHospitals: any = [];
+
+    data.forEach((hospital) => {
+      const preparedHospital = {
+        name: hospital.hospitalName,
+        value: hospital.total,
+      };
+
+      preparedDoctorsCountInHospitals.push(preparedHospital);
+    });
+
+    return preparedDoctorsCountInHospitals;
+  }
 }

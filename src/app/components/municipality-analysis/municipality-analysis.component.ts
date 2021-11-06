@@ -46,7 +46,6 @@ export class MunicipalityAnalysisComponent implements OnInit {
     this.municipalityStatsEndPointService
       .getMunicipalityStats(municipalityKey)
       .then((response) => {
-        console.log(response);
         this.totalDoctorsInMunicipality =
           response.totalDoctorCountInMunicipality;
         this.totalDoctorsInMunicipalityGroupedByGender =
@@ -55,9 +54,12 @@ export class MunicipalityAnalysisComponent implements OnInit {
           response.totalSpecialtyCountInMunicipality[0].specialties;
         this.totalHospitalCountInMunicipality =
           response.totalHospitalsInMunicipality[0];
+        this.totalDoctorsInHospital =
+          response.doctorsCountForHospitalsInMunicipality;
         this.prepareDoctorsCountChartData();
         this.prepareGenderDoughnutChartData();
         this.prepareSpecialtyDoughnutChartData();
+        this.prepareDoctorsCountInHospitalsChartData();
       });
   }
 
@@ -88,6 +90,13 @@ export class MunicipalityAnalysisComponent implements OnInit {
     this.specialtyDoughnutChartData =
       this.mainDirectoryStatsAuxiliaryService.formatSpecialtyDataForDoughnutGraphDisplayData(
         this.totalSpecialtyCountInMunicipality
+      );
+  }
+
+  prepareDoctorsCountInHospitalsChartData() {
+    this.totalDoctorsInHospitalChartData =
+      this.municipalityStatsAuxiliaryService.formatDoctorsCountInHospitals(
+        this.totalDoctorsInHospital
       );
   }
 }
