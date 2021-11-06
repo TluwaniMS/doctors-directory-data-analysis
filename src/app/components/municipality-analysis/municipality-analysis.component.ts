@@ -17,15 +17,19 @@ export class MunicipalityAnalysisComponent implements OnInit {
   totalDoctorsInMunicipalityGroupedByGender: any[] | any;
   totalSpecialtyCountInMunicipality: any[] | any;
   totalHospitalCountInMunicipality: any[] | any;
+  totalDoctorsInHospital: any[] | any;
 
   // card chart data config
   cardChartData: any[] | any;
 
-  // doughnut chart data for gender count
+  // doughnut chart data for gender count config
   genderDoughnutChartData: any[] | any;
 
-  // doughnut chart data for specialty count
+  // doughnut chart data for specialty count config
   specialtyDoughnutChartData: any[] | any;
+
+  // bar graph chart for hospital doxtors count config
+  totalDoctorsInHospitalChartData: any[] | any;
   constructor(
     private route: ActivatedRoute,
     private municipalityStatsEndPointService: MunicipalityStatsEndPointService,
@@ -42,6 +46,7 @@ export class MunicipalityAnalysisComponent implements OnInit {
     this.municipalityStatsEndPointService
       .getMunicipalityStats(municipalityKey)
       .then((response) => {
+        console.log(response);
         this.totalDoctorsInMunicipality =
           response.totalDoctorCountInMunicipality;
         this.totalDoctorsInMunicipalityGroupedByGender =
@@ -69,10 +74,7 @@ export class MunicipalityAnalysisComponent implements OnInit {
         this.totalHospitalCountInMunicipality.totalHospitals
       );
 
-    this.cardChartData = [
-      preparedDoctorsCardData,
-      preparedHospitalsCardData,
-    ];
+    this.cardChartData = [preparedDoctorsCardData, preparedHospitalsCardData];
   }
 
   prepareGenderDoughnutChartData() {
