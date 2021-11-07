@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ViewSupportingModelTitles } from 'src/app/models/operational-support-models/view-supporting-model-titles.component';
+import { MainDirectoryStatsAuxiliaryService } from 'src/app/services/auxillary-services/main-directory-stats-auxilary.service';
+
 import { HospitalStatsEndPointService } from 'src/app/services/end-point-services/hospital-end-point-service.service';
 
 @Component({
@@ -12,9 +15,17 @@ export class HospitalAnalysisComponent implements OnInit {
 
   totalDoctors: any[] | any;
   totalGenderCount: any[] | any;
+
+  // doctors card data chart config
+  totalDoctorsCardChartData: any[] | any;
+
+  // total doctors gender count doughnut data config /'
+  totalGenderDoughnutChartData: any[] | any;
+
   constructor(
     private route: ActivatedRoute,
-    private hospitalStatsEndPointService: HospitalStatsEndPointService
+    private hospitalStatsEndPointService: HospitalStatsEndPointService,
+    private mainDirectoryStatsAuxiliaryService: MainDirectoryStatsAuxiliaryService
   ) {}
 
   ngOnInit(): void {
