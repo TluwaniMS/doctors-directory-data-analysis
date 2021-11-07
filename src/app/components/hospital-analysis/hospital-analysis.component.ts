@@ -9,6 +9,9 @@ import { HospitalStatsEndPointService } from 'src/app/services/end-point-service
 })
 export class HospitalAnalysisComponent implements OnInit {
   hospitalKey: string | any;
+
+  totalDoctors: any[] | any;
+  totalGenderCount: any[] | any;
   constructor(
     private route: ActivatedRoute,
     private hospitalStatsEndPointService: HospitalStatsEndPointService
@@ -24,6 +27,12 @@ export class HospitalAnalysisComponent implements OnInit {
       .getHospitalStats(hospitalKey)
       .then((response) => {
         console.log(response);
+        this.totalDoctors = response.doctorsCount;
+        this.totalGenderCount = response.genderCount;
       });
   }
+
+  prepareTotalDoctorsCardChartData() {}
+
+  prepareDoughnutGenderChartData() {}
 }
