@@ -40,10 +40,22 @@ export class HospitalAnalysisComponent implements OnInit {
         console.log(response);
         this.totalDoctors = response.doctorsCount;
         this.totalGenderCount = response.genderCount;
+        this.prepareTotalDoctorsCardChartData();
       });
   }
 
-  prepareTotalDoctorsCardChartData() {}
+  prepareTotalDoctorsCardChartData() {
+    const preparedCardData = [];
+    const preparedTotalDoctors =
+      this.mainDirectoryStatsAuxiliaryService.formatDataForGraphDisplay(
+        ViewSupportingModelTitles.Doctors,
+        this.totalDoctors
+      );
+
+    preparedCardData.push(preparedTotalDoctors);
+
+    this.totalDoctorsCardChartData = preparedCardData;
+  }
 
   prepareDoughnutGenderChartData() {}
 }
