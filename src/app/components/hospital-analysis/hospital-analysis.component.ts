@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ViewSupportingModelTitles } from 'src/app/models/operational-support-models/view-supporting-model-titles.component';
 import { MainDirectoryStatsAuxiliaryService } from 'src/app/services/auxillary-services/main-directory-stats-auxilary.service';
-
+import { HospitalStatsAuxiliaryService } from 'src/app/services/auxillary-services/hospitals-stats-auxialry.service';
 import { HospitalStatsEndPointService } from 'src/app/services/end-point-services/hospital-end-point-service.service';
 
 @Component({
@@ -25,7 +25,8 @@ export class HospitalAnalysisComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private hospitalStatsEndPointService: HospitalStatsEndPointService,
-    private mainDirectoryStatsAuxiliaryService: MainDirectoryStatsAuxiliaryService
+    private mainDirectoryStatsAuxiliaryService: MainDirectoryStatsAuxiliaryService,
+    private hospitalStatsAuxiliaryService: HospitalStatsAuxiliaryService
   ) {}
 
   ngOnInit(): void {
@@ -37,10 +38,10 @@ export class HospitalAnalysisComponent implements OnInit {
     this.hospitalStatsEndPointService
       .getHospitalStats(hospitalKey)
       .then((response) => {
-        console.log(response);
         this.totalDoctors = response.doctorsCount;
         this.totalGenderCount = response.genderCount;
         this.prepareTotalDoctorsCardChartData();
+        this.prepareDoughnutGenderChartData();
       });
   }
 
@@ -57,5 +58,10 @@ export class HospitalAnalysisComponent implements OnInit {
     this.totalDoctorsCardChartData = preparedCardData;
   }
 
-  prepareDoughnutGenderChartData() {}
+  prepareDoughnutGenderChartData() {
+    this.totalGenderDoughnutChartData =
+      this.hospitalStatsAuxiliaryService.formatGenderCountDoughnutChartData(
+        this.totalGenderCount
+      );
+  }
 }
