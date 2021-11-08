@@ -15,12 +15,16 @@ export class HospitalAnalysisComponent implements OnInit {
 
   totalDoctors: any[] | any;
   totalGenderCount: any[] | any;
+  totalSpecialtyCount: any[] | any;
 
   // doctors card data chart config
   totalDoctorsCardChartData: any[] | any;
 
-  // total doctors gender count doughnut data config /'
+  // total doctors gender count doughnut data config
   totalGenderDoughnutChartData: any[] | any;
+
+  // specialty count doughnut comparison data config
+  totalSpecialtyDoughnutChartData: any[] | any;
 
   constructor(
     private route: ActivatedRoute,
@@ -40,8 +44,10 @@ export class HospitalAnalysisComponent implements OnInit {
       .then((response) => {
         this.totalDoctors = response.doctorsCount;
         this.totalGenderCount = response.genderCount;
+        this.totalSpecialtyCount = response.specialtyCount;
         this.prepareTotalDoctorsCardChartData();
         this.prepareDoughnutGenderChartData();
+        this.prepareSpecialtyDoughnutChartData();
       });
   }
 
@@ -62,6 +68,13 @@ export class HospitalAnalysisComponent implements OnInit {
     this.totalGenderDoughnutChartData =
       this.hospitalStatsAuxiliaryService.formatGenderCountDoughnutChartData(
         this.totalGenderCount
+      );
+  }
+
+  prepareSpecialtyDoughnutChartData() {
+    this.totalSpecialtyDoughnutChartData =
+      this.mainDirectoryStatsAuxiliaryService.formatSpecialtyDataForDoughnutGraphDisplayData(
+        this.totalSpecialtyCount
       );
   }
 }
