@@ -1,20 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Totals } from 'src/app/models/interfaces/total-property-interface';
 import { Specialisations } from 'src/app/models/view-supporting-models/specialties.component';
 import { Municipalities } from 'src/app/models/view-supporting-models/municipalities.component';
 import { DoctorsProperties } from 'src/app/models/operational-support-models/doctors-properties';
 
 @Injectable()
 export class MainDirectoryStatsAuxiliaryService {
-  formatDataForGraphDisplay(propertyName: string, data: Totals) {
-    const graphData = {
-      name: propertyName,
-      value: data.total,
-    };
-
-    return graphData;
-  }
-
   formatSpecialtyDataForDoughnutGraphDisplayData(data: any[]) {
     const arrayOfFormattedSpecialisations: any[] = [];
 

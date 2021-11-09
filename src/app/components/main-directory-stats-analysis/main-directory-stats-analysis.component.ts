@@ -3,6 +3,7 @@ import { MainDirectoryStatsEndPointService } from 'src/app/services/end-point-se
 import { Totals } from 'src/app/models/interfaces/total-property-interface';
 import { MainDirectoryStatsAuxiliaryService } from 'src/app/services/auxillary-services/main-directory-stats-auxilary.service';
 import { ViewSupportingModelTitles } from 'src/app/models/operational-support-models/view-supporting-model-titles.component';
+import { SharedStatsAuxiliaryService } from 'src/app/services/auxillary-services/shared-stats-auxiliary.service';
 
 @Component({
   selector: 'app-main-directory-stats-analysis',
@@ -79,7 +80,8 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
 
   constructor(
     private mainDirectoryStatsEndPointService: MainDirectoryStatsEndPointService,
-    private mainDirectoryStatsAuxiliaryService: MainDirectoryStatsAuxiliaryService
+    private mainDirectoryStatsAuxiliaryService: MainDirectoryStatsAuxiliaryService,
+    private sharedStatsAuxiliaryService: SharedStatsAuxiliaryService
   ) {}
 
   ngOnInit(): void {
@@ -104,17 +106,17 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
   prepareCardChartData() {
     const preparedCardDisplayData = [];
     const preparedTotalDoctors =
-      this.mainDirectoryStatsAuxiliaryService.formatDataForGraphDisplay(
+      this.sharedStatsAuxiliaryService.formatDataForGraphDisplay(
         ViewSupportingModelTitles.Doctors,
         this.totalDoctors
       );
     const preparedTotalMunicipalities =
-      this.mainDirectoryStatsAuxiliaryService.formatDataForGraphDisplay(
+      this.sharedStatsAuxiliaryService.formatDataForGraphDisplay(
         ViewSupportingModelTitles.Municipalities,
         this.totalMunicipalities
       );
     const preparedTotalHospitals =
-      this.mainDirectoryStatsAuxiliaryService.formatDataForGraphDisplay(
+      this.sharedStatsAuxiliaryService.formatDataForGraphDisplay(
         ViewSupportingModelTitles.Hospitals,
         this.totalHospitals
       );

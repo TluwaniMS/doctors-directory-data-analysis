@@ -4,6 +4,7 @@ import { ViewSupportingModelTitles } from 'src/app/models/operational-support-mo
 import { MainDirectoryStatsAuxiliaryService } from 'src/app/services/auxillary-services/main-directory-stats-auxilary.service';
 import { HospitalStatsAuxiliaryService } from 'src/app/services/auxillary-services/hospitals-stats-auxialry.service';
 import { HospitalStatsEndPointService } from 'src/app/services/end-point-services/hospital-end-point-service.service';
+import { SharedStatsAuxiliaryService } from 'src/app/services/auxillary-services/shared-stats-auxiliary.service';
 
 @Component({
   selector: 'app-hospital-analysis',
@@ -34,7 +35,8 @@ export class HospitalAnalysisComponent implements OnInit {
     private route: ActivatedRoute,
     private hospitalStatsEndPointService: HospitalStatsEndPointService,
     private mainDirectoryStatsAuxiliaryService: MainDirectoryStatsAuxiliaryService,
-    private hospitalStatsAuxiliaryService: HospitalStatsAuxiliaryService
+    private hospitalStatsAuxiliaryService: HospitalStatsAuxiliaryService,
+    private sharedStatsAuxiliaryService: SharedStatsAuxiliaryService
   ) {}
 
   ngOnInit(): void {
@@ -61,7 +63,7 @@ export class HospitalAnalysisComponent implements OnInit {
   prepareTotalDoctorsCardChartData() {
     const preparedCardData = [];
     const preparedTotalDoctors =
-      this.mainDirectoryStatsAuxiliaryService.formatDataForGraphDisplay(
+      this.sharedStatsAuxiliaryService.formatDataForGraphDisplay(
         ViewSupportingModelTitles.Doctors,
         this.totalDoctors
       );
