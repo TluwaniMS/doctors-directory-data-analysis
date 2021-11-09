@@ -38,11 +38,11 @@ export class HospitalStatsAuxiliaryService {
         (count) => count.specialtyName === specialisation.title
       );
 
-      const totalFemaleCount = linkedSpecialty.genderCount.filter(
+      const totalFemaleCount = linkedSpecialty[0].genderCount.filter(
         (count: any) => count.gender === DoctorsProperties.Female
       );
 
-      const totalMaleCount = linkedSpecialty.genderCount.filter(
+      const totalMaleCount = linkedSpecialty[0].genderCount.filter(
         (count: any) => count.gender === DoctorsProperties.Male
       );
 

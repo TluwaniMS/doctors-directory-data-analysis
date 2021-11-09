@@ -54,6 +54,7 @@ export class HospitalAnalysisComponent implements OnInit {
         this.prepareTotalDoctorsCardChartData();
         this.prepareDoughnutGenderChartData();
         this.prepareSpecialtyDoughnutChartData();
+        this.prepareSpecialtyCountGroupedByGenderChartData();
       });
   }
 
@@ -81,6 +82,13 @@ export class HospitalAnalysisComponent implements OnInit {
     this.totalSpecialtyDoughnutChartData =
       this.mainDirectoryStatsAuxiliaryService.formatSpecialtyDataForDoughnutGraphDisplayData(
         this.totalSpecialtyCount
+      );
+  }
+
+  prepareSpecialtyCountGroupedByGenderChartData() {
+    this.totalSpecialtyCountGroupedByGenderChartData =
+      this.hospitalStatsAuxiliaryService.formatTotalSpecialisationCountGroupedByGender(
+        this.totalSpecialtyCountGroupedByGender
       );
   }
 }
