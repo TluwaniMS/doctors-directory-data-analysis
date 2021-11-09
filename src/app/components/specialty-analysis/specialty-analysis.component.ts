@@ -13,9 +13,13 @@ export class SpecialtyAnalysisComponent implements OnInit {
   specialtyKey: string | any;
 
   totalDoctors: any[] | any;
+  totalDoctorsGroupedByGender: any[] | any;
 
   // total doctors in specialty count card data chart config
   totalDoctorsCountInSpecialtyCardChartData: any[] | any;
+
+  // total doctors in specialty count grouped by gender data chart config
+  totalDoctorsCountInSpecialtyGroupedByGenderChartData: any[] | any;
 
   constructor(
     private route: ActivatedRoute,
@@ -33,8 +37,10 @@ export class SpecialtyAnalysisComponent implements OnInit {
       .getSpecialyStats(specialtyKey)
       .then((response) => {
         this.totalDoctors = response.totalSpecialtyCount;
+        this.totalDoctorsGroupedByGender =
+          response.specialtyCountGroupedByGender;
         this.prepareTotalDoctorsCountInSpecialtyChartData();
-        console.log(this.totalDoctorsCountInSpecialtyCardChartData);
+        this.prepareTotalDoctorsCountInSpecialtyGroupedByGenderDoughnutChartData();
       });
   }
 
@@ -51,5 +57,12 @@ export class SpecialtyAnalysisComponent implements OnInit {
 
     this.totalDoctorsCountInSpecialtyCardChartData =
       preparedtotalDoctorsCountInSpecialty;
+  }
+
+  prepareTotalDoctorsCountInSpecialtyGroupedByGenderDoughnutChartData() {
+    this.totalDoctorsCountInSpecialtyGroupedByGenderChartData =
+      this.sharedStatsAuxiliaryService.formatGenderCountDoughnutChartData(
+        this.totalDoctorsGroupedByGender
+      );
   }
 }

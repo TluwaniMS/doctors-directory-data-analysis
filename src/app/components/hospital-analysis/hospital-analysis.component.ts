@@ -75,7 +75,7 @@ export class HospitalAnalysisComponent implements OnInit {
 
   prepareDoughnutGenderChartData() {
     this.totalGenderDoughnutChartData =
-      this.hospitalStatsAuxiliaryService.formatGenderCountDoughnutChartData(
+      this.sharedStatsAuxiliaryService.formatGenderCountDoughnutChartData(
         this.totalGenderCount
       );
   }
