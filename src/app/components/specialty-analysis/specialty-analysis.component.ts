@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { SpecialtyStatsEndPointService } from 'src/app/services/end-point-services/specialty-end-point-service.service';
 import { SharedStatsAuxiliaryService } from 'src/app/services/auxillary-services/shared-stats-auxiliary.service';
 import { ViewSupportingModelTitles } from 'src/app/models/operational-support-models/view-supporting-model-titles.component';
+import { SpecialtyStatsAuxiliaryService } from 'src/app/services/auxillary-services/specialty-stats-auxiliary.service';
 
 @Component({
   selector: 'app-specialty-analysis',
@@ -28,7 +29,8 @@ export class SpecialtyAnalysisComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private specialtyStatsEndPointService: SpecialtyStatsEndPointService,
-    private sharedStatsAuxiliaryService: SharedStatsAuxiliaryService
+    private sharedStatsAuxiliaryService: SharedStatsAuxiliaryService,
+    private specialtyStatsAuxiliaryService: SpecialtyStatsAuxiliaryService
   ) {}
 
   ngOnInit(): void {
@@ -40,7 +42,6 @@ export class SpecialtyAnalysisComponent implements OnInit {
     this.specialtyStatsEndPointService
       .getSpecialyStats(specialtyKey)
       .then((response) => {
-        console.log(response);
         this.totalDoctors = response.totalSpecialtyCount;
         this.totalDoctorsGroupedByGender =
           response.specialtyCountGroupedByGender;
@@ -48,6 +49,7 @@ export class SpecialtyAnalysisComponent implements OnInit {
           response.specialtyCountGroupedByGenderForHospitals;
         this.prepareTotalDoctorsCountInSpecialtyChartData();
         this.prepareTotalDoctorsCountInSpecialtyGroupedByGenderDoughnutChartData();
+        this.prepareTotalSpecialtyCountInHospitalsGroupedByGenderGraphDisplayData();
       });
   }
 
@@ -70,6 +72,13 @@ export class SpecialtyAnalysisComponent implements OnInit {
     this.totalDoctorsCountInSpecialtyGroupedByGenderChartData =
       this.sharedStatsAuxiliaryService.formatGenderCountDoughnutChartData(
         this.totalDoctorsGroupedByGender
+      );
+  }
+
+  prepareTotalSpecialtyCountInHospitalsGroupedByGenderGraphDisplayData() {
+    this.totalDoctorsCountInHospitalGroupedBySpecialtyAndGenderChartData =
+      this.specialtyStatsAuxiliaryService.formatSpecialtyCountInHospitalsGroupedByGenderGraphDisplayData(
+        this.totalSpecialtyCountForHospitalsGroupedByGender
       );
   }
 }
