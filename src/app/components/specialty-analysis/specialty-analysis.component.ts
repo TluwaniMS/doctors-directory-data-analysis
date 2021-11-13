@@ -16,6 +16,7 @@ export class SpecialtyAnalysisComponent implements OnInit {
   totalDoctors: any[] | any;
   totalDoctorsGroupedByGender: any[] | any;
   totalSpecialtyCountForHospitalsGroupedByGender: any[] | any;
+  totalSpecialtyCountForMunicipalitiesGroupedByGender: any[] | any;
 
   // total doctors in specialty count card data chart config
   totalDoctorsCountInSpecialtyCardChartData: any[] | any;
@@ -25,6 +26,11 @@ export class SpecialtyAnalysisComponent implements OnInit {
 
   // total doctors in specialty found in hospital grouped by gender
   totalDoctorsCountInHospitalGroupedBySpecialtyAndGenderChartData: any[] | any;
+
+  //total doctors in specialty found in municiaplity grouped by gender
+  totalDoctorsCountInMunicipalityGroupedBySpecialtyAndGenderChartData:
+    | any[]
+    | any;
 
   constructor(
     private route: ActivatedRoute,
@@ -47,6 +53,8 @@ export class SpecialtyAnalysisComponent implements OnInit {
           response.specialtyCountGroupedByGender;
         this.totalSpecialtyCountForHospitalsGroupedByGender =
           response.specialtyCountGroupedByGenderForHospitals;
+        this.totalSpecialtyCountForMunicipalitiesGroupedByGender =
+          response.specialtyCountGroupedByGenderForMunicipalities;
         this.prepareTotalDoctorsCountInSpecialtyChartData();
         this.prepareTotalDoctorsCountInSpecialtyGroupedByGenderDoughnutChartData();
         this.prepareTotalSpecialtyCountInHospitalsGroupedByGenderGraphDisplayData();
