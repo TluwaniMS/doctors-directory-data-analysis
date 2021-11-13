@@ -58,6 +58,7 @@ export class SpecialtyAnalysisComponent implements OnInit {
         this.prepareTotalDoctorsCountInSpecialtyChartData();
         this.prepareTotalDoctorsCountInSpecialtyGroupedByGenderDoughnutChartData();
         this.prepareTotalSpecialtyCountInHospitalsGroupedByGenderGraphDisplayData();
+        this.prepareTotalSpecialtyCountInMunicipalitiesGroupedByGenderGraphDisplayData();
       });
   }
 
@@ -87,6 +88,13 @@ export class SpecialtyAnalysisComponent implements OnInit {
     this.totalDoctorsCountInHospitalGroupedBySpecialtyAndGenderChartData =
       this.specialtyStatsAuxiliaryService.formatSpecialtyCountInHospitalsGroupedByGenderGraphDisplayData(
         this.totalSpecialtyCountForHospitalsGroupedByGender
+      );
+  }
+
+  prepareTotalSpecialtyCountInMunicipalitiesGroupedByGenderGraphDisplayData() {
+    this.totalDoctorsCountInMunicipalityGroupedBySpecialtyAndGenderChartData =
+      this.sharedStatsAuxiliaryService.formatTotalDoctorsInMunicipalitiesGroupedByGender(
+        this.totalSpecialtyCountForMunicipalitiesGroupedByGender
       );
   }
 }
