@@ -146,7 +146,7 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
 
   prepareGraphDataForTotalDoctorsInMunicipalityGroupedByGender() {
     this.municipalityDoctorsGroupedByGenderGraphChartData =
-      this.mainDirectoryStatsAuxiliaryService.formatTotalDoctorsInMunicipalitiesGroupedByGender(
+      this.sharedStatsAuxiliaryService.formatTotalDoctorsInMunicipalitiesGroupedByGender(
         this.totalDoctorsInMunicipalitiesGroupedByGender
       );
   }

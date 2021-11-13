@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Specialisations } from 'src/app/models/view-supporting-models/specialties.component';
 import { Municipalities } from 'src/app/models/view-supporting-models/municipalities.component';
-import { DoctorsProperties } from 'src/app/models/operational-support-models/doctors-properties';
 
 @Injectable()
 export class MainDirectoryStatsAuxiliaryService {
@@ -42,37 +41,5 @@ export class MainDirectoryStatsAuxiliaryService {
     });
 
     return arrayOfFormattedMunicipalities;
-  }
-
-  formatTotalDoctorsInMunicipalitiesGroupedByGender(data: any[]) {
-    const formattedTotalDoctorsInMunicipalityGroupedByGender: any[] = [];
-
-    Municipalities.forEach((municipalProperties) => {
-      const linkedMunicipality = data.filter(
-        (municipality) =>
-          municipality.municipalityName === municipalProperties.title
-      );
-
-      const totalMalesFormattedData = {
-        name: DoctorsProperties.Male,
-        value: linkedMunicipality[0].totalMaleDoctors,
-      };
-
-      const totalFemalesFormattedData = {
-        name: DoctorsProperties.Female,
-        value: linkedMunicipality[0].totalFemaleDoctors,
-      };
-
-      const formattedTotalDoctorsInMunicipaltiyGroupedByGender = {
-        name: linkedMunicipality[0].municipalityName,
-        series: [totalMalesFormattedData, totalFemalesFormattedData],
-      };
-
-      formattedTotalDoctorsInMunicipalityGroupedByGender.push(
-        formattedTotalDoctorsInMunicipaltiyGroupedByGender
-      );
-    });
-
-    return formattedTotalDoctorsInMunicipalityGroupedByGender;
   }
 }
