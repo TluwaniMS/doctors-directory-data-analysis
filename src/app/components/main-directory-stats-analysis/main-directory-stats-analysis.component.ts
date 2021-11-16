@@ -24,20 +24,20 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
   cardChartData: any[] | any;
   cardView: [number, number] = [400, 400];
   cardColor: string = '#232837';
-  cardColorScheme: any = { domain: ['#5AA454', '#E44D25', '#CFC0BB'] };
+  cardColorScheme: any = { domain: ['#242582', '#557A95', '#66FCF1'] };
 
   // doughnut chart config and data for specialties
   specialtyDoughnutChartData: any[] | any;
   specialtyDoughnutView: [number, number] = [400, 400];
   specialtyDoughnutColorScheme: any = {
     domain: [
-      '#5AA454',
-      '#A10A28',
-      '#C7B42C',
-      '#AAAAAA',
-      '#CFC0BB',
-      '#E44D25',
-      '5AA454',
+      '#802BB1',
+      '#1E4258',
+      '#501F3A',
+      '#29648A',
+      '#C34271',
+      '#33266E',
+      '#0677A1',
     ],
   };
   specialtyDoughnutGradient: boolean = true;
@@ -58,7 +58,7 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
   municipalityHospitalsYaxisLabel = 'Hospitals';
 
   municipalityHospitalsColorScheme: any = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
+    domain: ['#802BB1', '#1E4258', '#501F3A', '#29648A', '#33266E'],
   };
 
   // bar graph chart for total doctors in municipality grouped by gender
@@ -75,7 +75,7 @@ export class MainDirectoryStatsAnalysisComponent implements OnInit {
   municipalityDoctorsGroupedByGenderAnimations: boolean = true;
 
   municipalityDoctorsGroupedByGenderColorScheme: any = {
-    domain: ['#5AA454', '#C7B42C', '#AAAAAA'],
+    domain: ['#8590AA', '#4C495D'],
   };
 
   constructor(
