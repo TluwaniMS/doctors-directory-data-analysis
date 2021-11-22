@@ -21,6 +21,8 @@ export class HospitalAnalysisComponent implements OnInit {
 
   // doctors card data chart config
   totalDoctorsCardChartData: any[] | any;
+  cardColor: string = '#232837';
+  cardColorScheme: any = { domain: ['#242582', '#557A95', '#66FCF1'] };
 
   // total doctors gender count doughnut data config
   totalGenderDoughnutChartData: any[] | any;

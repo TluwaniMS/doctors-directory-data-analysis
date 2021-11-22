@@ -1,1 +1,16 @@
-<p>hospital-analysis works!</p>
+<ng-container *ngTemplateOutlet="mainNumberCardChartContainer"> </ng-container>
+
+<ng-template #mainNumberCardChartContainer>
+  <div class="number-card-chart-container">
+    <ng-container *ngTemplateOutlet="numberCardChartsContainer"> </ng-container>
+  </div>
+</ng-template>
+
+<ng-template #numberCardChartsContainer>
+  <ngx-charts-number-card
+    [scheme]="cardColorScheme"
+    [results]="totalDoctorsCardChartData"
+    [cardColor]="cardColor"
+  >
+  </ngx-charts-number-card>
+</ng-template>
