@@ -24,11 +24,28 @@ export class MunicipalityAnalysisComponent implements OnInit {
   cardColor: string = '#232837';
   cardColorScheme: any = { domain: ['#242582', '#557A95', '#66FCF1'] };
 
+  // shared doughnut chart data config
+  doughnutGradient: boolean = true;
+
   // doughnut chart data for gender count config
   genderDoughnutChartData: any[] | any;
+  genderDoughnutColorScheme: any = {
+    domain: ['#802BB1', '#1E4258'],
+  };
 
   // doughnut chart data for specialty count config
   specialtyDoughnutChartData: any[] | any;
+  specialtyDoughnutColorScheme: any = {
+    domain: [
+      '#802BB1',
+      '#1E4258',
+      '#501F3A',
+      '#29648A',
+      '#C34271',
+      '#33266E',
+      '#0677A1',
+    ],
+  };
 
   // bar graph chart for hospital doxtors count config
   totalDoctorsInHospitalChartData: any[] | any;
