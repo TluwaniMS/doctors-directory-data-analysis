@@ -20,6 +20,8 @@ export class SpecialtyAnalysisComponent implements OnInit {
 
   // total doctors in specialty count card data chart config
   totalDoctorsCountInSpecialtyCardChartData: any[] | any;
+  cardColor: string = '#232837';
+  cardColorScheme: any = { domain: ['#242582', '#557A95', '#66FCF1'] };
 
   // total doctors in specialty count grouped by gender data chart config
   totalDoctorsCountInSpecialtyGroupedByGenderChartData: any[] | any;
