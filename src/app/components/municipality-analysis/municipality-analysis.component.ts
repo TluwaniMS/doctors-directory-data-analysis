@@ -21,6 +21,8 @@ export class MunicipalityAnalysisComponent implements OnInit {
 
   // card chart data config
   cardChartData: any[] | any;
+  cardColor: string = '#232837';
+  cardColorScheme: any = { domain: ['#242582', '#557A95', '#66FCF1'] };
 
   // doughnut chart data for gender count config
   genderDoughnutChartData: any[] | any;
