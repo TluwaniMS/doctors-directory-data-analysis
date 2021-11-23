@@ -30,13 +30,28 @@ export class SpecialtyAnalysisComponent implements OnInit {
   };
   specialtyDoughnutGradient: boolean = true;
 
+  // shared double bar graph data configuration
+  doubleBarGraphShowXAxis: boolean = true;
+  doubleBarGraphShowYAxis: boolean = true;
+  doubleBarGraphGradient: boolean = false;
+  doubleBarGraphShowLegend: boolean = true;
+  doubleBarGraphShowXAxisLabel: boolean = true;
+  doubleBarGraphshowYAxisLabel: boolean = true;
+  doubleBarGraphyAxisLabel: string = 'Doctors';
+  doubleBarGraphAnimations: boolean = true;
+  doubleBarGraphColorScheme: any = {
+    domain: ['#8590AA', '#4C495D'],
+  };
+
   // total doctors in specialty found in hospital grouped by gender
   totalDoctorsCountInHospitalGroupedBySpecialtyAndGenderChartData: any[] | any;
+  doubleBarGraphHospitalsxAxisLabel: string = 'Hospitals ';
 
   //total doctors in specialty found in municiaplity grouped by gender
   totalDoctorsCountInMunicipalityGroupedBySpecialtyAndGenderChartData:
     | any[]
     | any;
+  doubleBarGraphMunicipalitiesxAxisLabel: string = 'Municipalities';
 
   constructor(
     private route: ActivatedRoute,

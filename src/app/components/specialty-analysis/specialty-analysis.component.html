@@ -1,6 +1,16 @@
 <ng-container *ngTemplateOutlet="mainNumberCardChartContainer"> </ng-container>
 <ng-container *ngTemplateOutlet="mainSpecialtyDoughnutChartContainer">
 </ng-container>
+<ng-container
+  *ngTemplateOutlet="mainHospitalTotalDoctorsCountGroupedByGenderGraphChart"
+>
+</ng-container>
+<ng-container
+  *ngTemplateOutlet="
+    mainMunicipalityTotalDoctorsCountInGroupedByGenderGraphChart
+  "
+>
+</ng-container>
 
 <ng-template #mainNumberCardChartContainer>
   <div class="number-card-chart-container">
@@ -31,4 +41,64 @@
     [gradient]="specialtyDoughnutGradient"
   >
   </ngx-charts-advanced-pie-chart>
+</ng-template>
+
+<ng-template #mainHospitalTotalDoctorsCountGroupedByGenderGraphChart>
+  <div
+    class="total-doctors-count-in-hospital-grouped-by-gender-chart-container"
+  >
+    <ng-container
+      *ngTemplateOutlet="totalDoctorsCountInHospitalGroupedBySpecialtyAndGender"
+    >
+    </ng-container>
+  </div>
+</ng-template>
+
+<ng-template #mainMunicipalityTotalDoctorsCountInGroupedByGenderGraphChart>
+  <div
+    class="
+      total-doctors-count-in-municipality-grouped-by-gender-chart-container
+    "
+  >
+    <ng-container
+      *ngTemplateOutlet="
+        totalDoctorsCountInMunicipalityGroupedBySpecialtyAndGender
+      "
+    >
+    </ng-container>
+  </div>
+</ng-template>
+
+<ng-template #totalDoctorsCountInHospitalGroupedBySpecialtyAndGender>
+  <ngx-charts-bar-vertical-stacked
+    [scheme]="doubleBarGraphColorScheme"
+    [results]="totalDoctorsCountInHospitalGroupedBySpecialtyAndGenderChartData"
+    [gradient]="doubleBarGraphGradient"
+    [xAxis]="doubleBarGraphShowXAxis"
+    [yAxis]="doubleBarGraphShowYAxis"
+    [legend]="doubleBarGraphShowLegend"
+    [showXAxisLabel]="doubleBarGraphShowXAxisLabel"
+    [showYAxisLabel]="doubleBarGraphshowYAxisLabel"
+    [xAxisLabel]="doubleBarGraphHospitalsxAxisLabel"
+    [yAxisLabel]="doubleBarGraphyAxisLabel"
+    [animations]="doubleBarGraphAnimations"
+  ></ngx-charts-bar-vertical-stacked>
+</ng-template>
+
+<ng-template #totalDoctorsCountInMunicipalityGroupedBySpecialtyAndGender>
+  <ngx-charts-bar-vertical-stacked
+    [scheme]="doubleBarGraphColorScheme"
+    [results]="
+      totalDoctorsCountInMunicipalityGroupedBySpecialtyAndGenderChartData
+    "
+    [gradient]="doubleBarGraphGradient"
+    [xAxis]="doubleBarGraphShowXAxis"
+    [yAxis]="doubleBarGraphShowYAxis"
+    [legend]="doubleBarGraphShowLegend"
+    [showXAxisLabel]="doubleBarGraphShowXAxis"
+    [showYAxisLabel]="doubleBarGraphshowYAxisLabel"
+    [xAxisLabel]="doubleBarGraphMunicipalitiesxAxisLabel"
+    [yAxisLabel]="doubleBarGraphyAxisLabel"
+    [animations]="doubleBarGraphAnimations"
+  ></ngx-charts-bar-vertical-stacked>
 </ng-template>

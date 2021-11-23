@@ -11,3 +11,17 @@
   height: 200px;
   width: 100%;
 }
+
+.total-doctors-count-in-municipality-grouped-by-gender-chart-container {
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+  width: 100%;
+}
+
+.total-doctors-count-in-hospital-grouped-by-gender-chart-container {
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+  width: 100%;
+}
