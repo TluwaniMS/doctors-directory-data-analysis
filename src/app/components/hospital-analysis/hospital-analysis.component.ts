@@ -24,11 +24,28 @@ export class HospitalAnalysisComponent implements OnInit {
   cardColor: string = '#232837';
   cardColorScheme: any = { domain: ['#242582', '#557A95', '#66FCF1'] };
 
+  // shared doughnut chart data config
+  doughnutGradient: boolean = true;
+
   // total doctors gender count doughnut data config
   totalGenderDoughnutChartData: any[] | any;
+  genderDoughnutColorScheme: any = {
+    domain: ['#802BB1', '#1E4258'],
+  };
 
-  // specialty count doughnut comparison data config
+  // specialty count doughnut comparison doughnut data config
   totalSpecialtyDoughnutChartData: any[] | any;
+  specialtyDoughnutColorScheme: any = {
+    domain: [
+      '#802BB1',
+      '#1E4258',
+      '#501F3A',
+      '#29648A',
+      '#C34271',
+      '#33266E',
+      '#0677A1',
+    ],
+  };
 
   //specialty count grouped by gender doubloe bar graph config
   totalSpecialtyCountGroupedByGenderChartData: any[] | any;

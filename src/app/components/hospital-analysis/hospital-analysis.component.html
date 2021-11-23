@@ -1,9 +1,45 @@
 <ng-container *ngTemplateOutlet="mainNumberCardChartContainer"> </ng-container>
+<ng-container *ngTemplateOutlet="mainGenderDoughnutChartContainer">
+</ng-container>
+<ng-container *ngTemplateOutlet="mainSpecialtyDoughnutChartContainer">
+</ng-container>
 
 <ng-template #mainNumberCardChartContainer>
   <div class="number-card-chart-container">
     <ng-container *ngTemplateOutlet="numberCardChartsContainer"> </ng-container>
   </div>
+</ng-template>
+
+<ng-template #mainSpecialtyDoughnutChartContainer>
+  <div class="specialty-doughnut-chart-container">
+    <ng-container *ngTemplateOutlet="specialtyDoughnutChartContainer">
+    </ng-container>
+  </div>
+</ng-template>
+
+<ng-template #mainGenderDoughnutChartContainer>
+  <div class="gender-doughnut-chart-container">
+    <ng-container *ngTemplateOutlet="genderDoughnutChartContainer">
+    </ng-container>
+  </div>
+</ng-template>
+
+<ng-template #genderDoughnutChartContainer>
+  <ngx-charts-advanced-pie-chart
+    [scheme]="genderDoughnutColorScheme"
+    [results]="totalGenderDoughnutChartData"
+    [gradient]="doughnutGradient"
+  >
+  </ngx-charts-advanced-pie-chart>
+</ng-template>
+
+<ng-template #specialtyDoughnutChartContainer>
+  <ngx-charts-advanced-pie-chart
+    [scheme]="specialtyDoughnutColorScheme"
+    [results]="totalSpecialtyDoughnutChartData"
+    [gradient]="doughnutGradient"
+  >
+  </ngx-charts-advanced-pie-chart>
 </ng-template>
 
 <ng-template #numberCardChartsContainer>

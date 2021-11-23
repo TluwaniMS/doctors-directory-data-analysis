@@ -4,3 +4,17 @@
   height: 200px;
   width: 100%;
 }
+
+.specialty-doughnut-chart-container {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  width: 100%;
+}
+
+.gender-doughnut-chart-container {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  width: 100%;
+}
