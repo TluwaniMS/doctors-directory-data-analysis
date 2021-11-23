@@ -47,8 +47,21 @@ export class MunicipalityAnalysisComponent implements OnInit {
     ],
   };
 
-  // bar graph chart for hospital doxtors count config
+  // bar graph chart for hospital doctors count config
   totalDoctorsInHospitalChartData: any[] | any;
+  totalDoctorsInHospitalGraphChartData: any[] | any;
+  totalDoctorsInHospitalShowXAxis: boolean = true;
+  totalDoctorsInHospitalShowYAxis: boolean = true;
+  totalDoctorsInHospitalGradient: boolean = false;
+  totalDoctorsInHospitalShowLegend: boolean = true;
+  totalDoctorsInHospitalShowXAxisLabel: boolean = true;
+  totalDoctorsInHospitalXaxisLabel = 'Municipalities';
+  totalDoctorsInHospitalShowYAxisLabel: boolean = true;
+  totalDoctorsInHospitalYaxisLabel = 'Hospitals';
+  totalDoctorsInHospitalColorScheme: any = {
+    domain: ['#802BB1', '#1E4258', '#501F3A', '#29648A', '#33266E'],
+  };
+
   constructor(
     private route: ActivatedRoute,
     private municipalityStatsEndPointService: MunicipalityStatsEndPointService,

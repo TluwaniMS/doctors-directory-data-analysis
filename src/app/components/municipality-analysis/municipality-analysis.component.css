@@ -18,3 +18,10 @@
   height: 200px;
   width: 100%;
 }
+
+.total-doctors-in-hospitals-chart-container {
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+  width: 100%;
+}

@@ -3,6 +3,8 @@
 </ng-container>
 <ng-container *ngTemplateOutlet="mainSpecialtyDoughnutChartContainer">
 </ng-container>
+<ng-container *ngTemplateOutlet="mainTotalDoctorsInHospitalsGraphChart">
+</ng-container>
 
 <ng-template #mainNumberCardChartContainer>
   <div class="number-card-chart-container">
@@ -20,6 +22,13 @@
 <ng-template #mainGenderDoughnutChartContainer>
   <div class="gender-doughnut-chart-container">
     <ng-container *ngTemplateOutlet="genderDoughnutChartContainer">
+    </ng-container>
+  </div>
+</ng-template>
+
+<ng-template #mainTotalDoctorsInHospitalsGraphChart>
+  <div class="total-doctors-in-hospitals-chart-container">
+    <ng-container *ngTemplateOutlet="totalDoctorsInHospitalsGraphChart">
     </ng-container>
   </div>
 </ng-template>
@@ -49,4 +58,20 @@
     [cardColor]="cardColor"
   >
   </ngx-charts-number-card>
+</ng-template>
+
+<ng-template #totalDoctorsInHospitalsGraphChart>
+  <ngx-charts-bar-vertical
+    [scheme]="totalDoctorsInHospitalColorScheme"
+    [results]="totalDoctorsInHospitalChartData"
+    [gradient]="totalDoctorsInHospitalGradient"
+    [xAxis]="totalDoctorsInHospitalShowXAxis"
+    [yAxis]="totalDoctorsInHospitalShowYAxis"
+    [legend]="totalDoctorsInHospitalShowLegend"
+    [showXAxisLabel]="totalDoctorsInHospitalShowXAxisLabel"
+    [showYAxisLabel]="totalDoctorsInHospitalShowYAxisLabel"
+    [xAxisLabel]="totalDoctorsInHospitalXaxisLabel"
+    [yAxisLabel]="totalDoctorsInHospitalYaxisLabel"
+  >
+  </ngx-charts-bar-vertical>
 </ng-template>
