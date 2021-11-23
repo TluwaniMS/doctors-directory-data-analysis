@@ -3,6 +3,10 @@
 </ng-container>
 <ng-container *ngTemplateOutlet="mainSpecialtyDoughnutChartContainer">
 </ng-container>
+<ng-container
+  *ngTemplateOutlet="mainTotalSpecialtyCountGroupedByGenderGraphChart"
+>
+</ng-container>
 
 <ng-template #mainNumberCardChartContainer>
   <div class="number-card-chart-container">
@@ -20,6 +24,13 @@
 <ng-template #mainGenderDoughnutChartContainer>
   <div class="gender-doughnut-chart-container">
     <ng-container *ngTemplateOutlet="genderDoughnutChartContainer">
+    </ng-container>
+  </div>
+</ng-template>
+
+<ng-template #mainTotalSpecialtyCountGroupedByGenderGraphChart>
+  <div class="specialty-count-grouped-by-gender-chart-container">
+    <ng-container *ngTemplateOutlet="totalSpecialtyCountGroupedByGender">
     </ng-container>
   </div>
 </ng-template>
@@ -49,4 +60,20 @@
     [cardColor]="cardColor"
   >
   </ngx-charts-number-card>
+</ng-template>
+
+<ng-template #totalSpecialtyCountGroupedByGender>
+  <ngx-charts-bar-vertical-stacked
+    [scheme]="totalSpecialtyCountGroupedByGenderColorScheme"
+    [results]="totalSpecialtyCountGroupedByGenderChartData"
+    [gradient]="totalSpecialtyCountGroupedByGenderGradient"
+    [xAxis]="totalSpecialtyCountGroupedByGenderShowXAxis"
+    [yAxis]="totalSpecialtyCountGroupedByGenderShowYAxis"
+    [legend]="totalSpecialtyCountGroupedByGenderShowLegend"
+    [showXAxisLabel]="totalSpecialtyCountGroupedByGenderShowXAxisLabel"
+    [showYAxisLabel]="totalSpecialtyCountGroupedByGendershowYAxisLabel"
+    [xAxisLabel]="totalSpecialtyCountGroupedByGenderxAxisLabel"
+    [yAxisLabel]="totalSpecialtyCountGroupedByGenderyAxisLabel"
+    [animations]="totalSpecialtyCountGroupedByGenderAnimations"
+  ></ngx-charts-bar-vertical-stacked>
 </ng-template>

@@ -49,6 +49,19 @@ export class HospitalAnalysisComponent implements OnInit {
 
   //specialty count grouped by gender doubloe bar graph config
   totalSpecialtyCountGroupedByGenderChartData: any[] | any;
+  totalSpecialtyCountGroupedByGenderView: [number, number] = [700, 400];
+  totalSpecialtyCountGroupedByGenderShowXAxis: boolean = true;
+  totalSpecialtyCountGroupedByGenderShowYAxis: boolean = true;
+  totalSpecialtyCountGroupedByGenderGradient: boolean = false;
+  totalSpecialtyCountGroupedByGenderShowLegend: boolean = true;
+  totalSpecialtyCountGroupedByGenderShowXAxisLabel: boolean = true;
+  totalSpecialtyCountGroupedByGenderxAxisLabel: string = 'Specialties';
+  totalSpecialtyCountGroupedByGendershowYAxisLabel: boolean = true;
+  totalSpecialtyCountGroupedByGenderyAxisLabel: string = 'Doctors';
+  totalSpecialtyCountGroupedByGenderAnimations: boolean = true;
+  totalSpecialtyCountGroupedByGenderColorScheme: any = {
+    domain: ['#8590AA', '#4C495D'],
+  };
 
   constructor(
     private route: ActivatedRoute,
