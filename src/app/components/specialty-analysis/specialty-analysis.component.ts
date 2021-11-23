@@ -23,8 +23,12 @@ export class SpecialtyAnalysisComponent implements OnInit {
   cardColor: string = '#232837';
   cardColorScheme: any = { domain: ['#242582', '#557A95', '#66FCF1'] };
 
-  // total doctors in specialty count grouped by gender data chart config
+  // total doctors in specialty count grouped by gender data doughnut chart config
   totalDoctorsCountInSpecialtyGroupedByGenderChartData: any[] | any;
+  specialtyDoughnutColorScheme: any = {
+    domain: ['#802BB1', '#1E4258'],
+  };
+  specialtyDoughnutGradient: boolean = true;
 
   // total doctors in specialty found in hospital grouped by gender
   totalDoctorsCountInHospitalGroupedBySpecialtyAndGenderChartData: any[] | any;

@@ -1,4 +1,6 @@
 <ng-container *ngTemplateOutlet="mainNumberCardChartContainer"> </ng-container>
+<ng-container *ngTemplateOutlet="mainSpecialtyDoughnutChartContainer">
+</ng-container>
 
 <ng-template #mainNumberCardChartContainer>
   <div class="number-card-chart-container">
@@ -13,4 +15,20 @@
     [cardColor]="cardColor"
   >
   </ngx-charts-number-card>
+</ng-template>
+
+<ng-template #mainSpecialtyDoughnutChartContainer>
+  <div class="specialty-doughnut-chart-container">
+    <ng-container *ngTemplateOutlet="specialtyDoughnutChartContainer">
+    </ng-container>
+  </div>
+</ng-template>
+
+<ng-template #specialtyDoughnutChartContainer>
+  <ngx-charts-advanced-pie-chart
+    [scheme]="specialtyDoughnutColorScheme"
+    [results]="totalDoctorsCountInSpecialtyGroupedByGenderChartData"
+    [gradient]="specialtyDoughnutGradient"
+  >
+  </ngx-charts-advanced-pie-chart>
 </ng-template>
