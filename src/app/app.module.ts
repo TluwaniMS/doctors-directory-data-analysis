@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { NbIconModule } from '@nebular/theme';
 import { NbSidebarModule } from '@nebular/theme';
 import { NbMenuModule } from '@nebular/theme';
 import { NbCardModule } from '@nebular/theme';
@@ -27,6 +28,7 @@ import { MainDirectoryStatsAnalysisComponent } from './components/main-directory
     MainDirectoryStatsAnalysisComponent,
   ],
   imports: [
+    NbIconModule,
     NgxChartsModule,
     HttpClientModule,
     BrowserModule,

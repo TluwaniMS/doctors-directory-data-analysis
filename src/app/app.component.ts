@@ -16,6 +16,7 @@ export class AppComponent {
   MenuContent: NbMenuItem[] = MenuItems;
   itemTitle: any | string;
   selectedItem: any | string;
+  sideBarIsVisible = true;
 
   constructor(
     private sidebarService: NbSidebarService,
@@ -36,6 +37,7 @@ export class AppComponent {
   }
 
   displaySideBar() {
+    this.sideBarIsVisible = !this.sideBarIsVisible;
     this.sidebarService.toggle(false, 'left');
   }
 

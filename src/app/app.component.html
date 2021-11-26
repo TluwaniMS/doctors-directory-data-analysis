@@ -1,5 +1,16 @@
 <nb-layout>
   <nb-layout-header fixed>
+    <nb-icon
+      *ngIf="sideBarIsVisible"
+      icon="close"
+      (click)="displaySideBar()"
+    ></nb-icon>
+    <nb-icon
+      *ngIf="!sideBarIsVisible"
+      icon="menu"
+      (click)="displaySideBar()"
+    ></nb-icon>
+    <nb-icon icon="home"></nb-icon>
     <!-- Insert header here -->
   </nb-layout-header>
   <nb-sidebar tag="left">
