@@ -66,4 +66,8 @@ export class AppComponent {
   navigateToSpecialtyStatsByKey(specialtyKey: string) {
     this.route.navigate(['/specialty-stats-view', specialtyKey]);
   }
+
+  navigateTomainDirectoryView() {
+    this.route.navigate(['/main-directory-stats-view']);
+  }
 }
