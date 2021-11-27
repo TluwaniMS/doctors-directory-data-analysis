@@ -1,12 +1,22 @@
-<ng-container *ngTemplateOutlet="mainNumberCardChartContainer"> </ng-container>
-<ng-container *ngTemplateOutlet="mainGenderDoughnutChartContainer">
+<ng-container *ngTemplateOutlet="numberCardAndGenderCountContainer">
 </ng-container>
+
 <ng-container *ngTemplateOutlet="mainSpecialtyDoughnutChartContainer">
 </ng-container>
 <ng-container
   *ngTemplateOutlet="mainTotalSpecialtyCountGroupedByGenderGraphChart"
 >
 </ng-container>
+
+<ng-template #numberCardAndGenderCountContainer>
+  <div class="number-card-chart-and-gender-count-container">
+    <ng-container *ngTemplateOutlet="mainNumberCardChartContainer">
+    </ng-container>
+    <ng-container
+      *ngTemplateOutlet="mainGenderDoughnutChartContainer"
+    ></ng-container>
+  </div>
+</ng-template>
 
 <ng-template #mainNumberCardChartContainer>
   <nb-card>
