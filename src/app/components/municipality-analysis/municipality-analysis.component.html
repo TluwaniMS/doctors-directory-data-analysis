@@ -7,30 +7,47 @@
 </ng-container>
 
 <ng-template #mainNumberCardChartContainer>
-  <div class="number-card-chart-container">
-    <ng-container *ngTemplateOutlet="numberCardChartsContainer"> </ng-container>
-  </div>
+  <nb-card>
+    <nb-card-body>
+      <div class="number-card-chart-container">
+        <ng-container *ngTemplateOutlet="numberCardChartsContainer">
+        </ng-container>
+      </div>
+    </nb-card-body>
+  </nb-card>
 </ng-template>
 
 <ng-template #mainSpecialtyDoughnutChartContainer>
-  <div class="specialty-doughnut-chart-container">
-    <ng-container *ngTemplateOutlet="specialtyDoughnutChartContainer">
-    </ng-container>
-  </div>
+  <nb-card>
+    <nb-card-body>
+      <div class="specialty-doughnut-chart-container">
+        <ng-container *ngTemplateOutlet="specialtyDoughnutChartContainer">
+        </ng-container>
+      </div>
+    </nb-card-body>
+  </nb-card>
 </ng-template>
 
 <ng-template #mainGenderDoughnutChartContainer>
-  <div class="gender-doughnut-chart-container">
-    <ng-container *ngTemplateOutlet="genderDoughnutChartContainer">
-    </ng-container>
-  </div>
+  <nb-card>
+    <nb-card-body>
+      <div class="gender-doughnut-chart-container">
+        <ng-container *ngTemplateOutlet="genderDoughnutChartContainer">
+        </ng-container>
+      </div>
+    </nb-card-body>
+  </nb-card>
 </ng-template>
 
 <ng-template #mainTotalDoctorsInHospitalsGraphChart>
-  <div class="total-doctors-in-hospitals-chart-container">
-    <ng-container *ngTemplateOutlet="totalDoctorsInHospitalsGraphChart">
-    </ng-container>
-  </div>
+  <nb-card>
+    <nb-card-body>
+      <div class="total-doctors-in-hospitals-chart-container">
+        <ng-container *ngTemplateOutlet="totalDoctorsInHospitalsGraphChart">
+        </ng-container>
+      </div>
+    </nb-card-body>
+  </nb-card>
 </ng-template>
 
 <ng-template #genderDoughnutChartContainer>
