@@ -1,16 +1,31 @@
 <nb-layout>
   <nb-layout-header fixed>
     <nb-icon
+      class="side-bar-triggering-icon"
       *ngIf="sideBarIsVisible"
       icon="close"
       (click)="displaySideBar()"
+      nbPopover="Hide Side Bar"
+      nbPopoverTrigger="hover"
+      nbPopoverPlacement="bottom"
     ></nb-icon>
     <nb-icon
+      class="side-bar-triggering-icon"
       *ngIf="!sideBarIsVisible"
       icon="menu"
       (click)="displaySideBar()"
+      nbPopover="View Side Bar"
+      nbPopoverTrigger="hover"
+      nbPopoverPlacement="bottom"
     ></nb-icon>
-    <nb-icon icon="home" (click)="navigateTomainDirectoryView()"></nb-icon>
+    <nb-icon
+      class="custome-icon-styling"
+      icon="home"
+      (click)="navigateTomainDirectoryView()"
+      nbPopover="Main Directory"
+      nbPopoverTrigger="hover"
+      nbPopoverPlacement="bottom"
+    ></nb-icon>
     <!-- Insert header here -->
   </nb-layout-header>
   <nb-sidebar tag="left">
