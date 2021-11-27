@@ -25,3 +25,9 @@
   height: 400px;
   width: 100%;
 }
+
+.number-card-chart-and-gender-specialty-count-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}

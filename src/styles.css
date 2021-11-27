@@ -2,3 +2,7 @@
 .advanced-pie-legend .legend-items-container .legend-items {
   overflow: initial !important;
 }
+
+.nb-theme-dark nb-card {
+  width: 100%;
+}
