@@ -9,9 +9,14 @@
 </ng-container>
 
 <ng-template #mainNumberCardChartContainer>
-  <div class="number-card-chart-container">
-    <ng-container *ngTemplateOutlet="numberCardChartsContainer"> </ng-container>
-  </div>
+  <nb-card>
+    <nb-card-body>
+      <div class="number-card-chart-container">
+        <ng-container *ngTemplateOutlet="numberCardChartsContainer">
+        </ng-container>
+      </div>
+    </nb-card-body>
+  </nb-card>
 </ng-template>
 
 <ng-template #numberCardChartsContainer>
@@ -24,10 +29,14 @@
 </ng-template>
 
 <ng-template #mainSpecialtyDoughnutChartContainer>
-  <div class="specialty-doughnut-chart-container">
-    <ng-container *ngTemplateOutlet="specialtyDoughnutChartContainer">
-    </ng-container>
-  </div>
+  <nb-card>
+    <nb-card-body>
+      <div class="specialty-doughnut-chart-container">
+        <ng-container *ngTemplateOutlet="specialtyDoughnutChartContainer">
+        </ng-container>
+      </div>
+    </nb-card-body>
+  </nb-card>
 </ng-template>
 
 <ng-template #specialtyDoughnutChartContainer>
@@ -40,10 +49,14 @@
 </ng-template>
 
 <ng-template #mainMunicipalityTotalHospitalsGraphChart>
-  <div class="municipality-total-hospitals-chart-container">
-    <ng-container *ngTemplateOutlet="municipalityTotalHospitalsGraphChart">
-    </ng-container>
-  </div>
+  <nb-card>
+    <nb-card-body>
+      <div class="municipality-total-hospitals-chart-container">
+        <ng-container *ngTemplateOutlet="municipalityTotalHospitalsGraphChart">
+        </ng-container>
+      </div>
+    </nb-card-body>
+  </nb-card>
 </ng-template>
 
 <ng-template #municipalityTotalHospitalsGraphChart>
@@ -63,10 +76,16 @@
 </ng-template>
 
 <ng-template #mainMunicipalityTotalDoctorsGroupedByGenderGraphChart>
-  <div class="municipality-total-doctors-grouped-by-gender-chart-container">
-    <ng-container *ngTemplateOutlet="municipalityTotalDoctorsGroupedByGender">
-    </ng-container>
-  </div>
+  <nb-card>
+    <nb-card-body>
+      <div class="municipality-total-doctors-grouped-by-gender-chart-container">
+        <ng-container
+          *ngTemplateOutlet="municipalityTotalDoctorsGroupedByGender"
+        >
+        </ng-container>
+      </div>
+    </nb-card-body>
+  </nb-card>
 </ng-template>
 
 <ng-template #municipalityTotalDoctorsGroupedByGender>
