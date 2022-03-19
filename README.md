@@ -1,5 +1,8 @@
 # D3DataAnalysis
 
+# About Repository:
+This is a basic angular project that I created to learn nebular and implement data visualisation using ngx-charts.
+
 # Dependencies:
 * NEBULAR
 * SWIMLANE/NGX-CHARTS
