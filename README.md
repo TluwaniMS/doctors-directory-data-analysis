@@ -3,6 +3,10 @@
 # About Repository:
 This is a basic angular project that I created to learn nebular and implement data visualisation using ngx-charts.
 
+# Software(s) required:
+* Latest stable version of Node Package Manager
+* Latest stable version of Angular CLI
+
 # Dependencies:
 * NEBULAR
 * SWIMLANE/NGX-CHARTS
