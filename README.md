@@ -9,6 +9,9 @@ This is a basic angular project that I created to learn nebular and implement da
 
 # Project Setup:
 
+## NB!
+Please clone the following [doctors directory server](https://github.com/TluwaniMS/doctors-directory-server) and make sure that it's running before running this project.
+
 * Step 1:
 
 Switch to the projects root directory and run "npm install" to install the rquired packages.
